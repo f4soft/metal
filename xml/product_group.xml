@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<categories>
+<category>
+<external_id>00000000013</external_id>
+<title_ru>Черный металл</title_ru>
+<title_ua>Чорний метал</title_ua>
+<title_en>Ferrous metal</title_en>
+<parent_id></parent_id>
+<related_categories>
+<related_category></related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000010</external_id>
+<title_ru>Арматура мерной длины</title_ru>
+<title_ua>Арматура мiрної довжини</title_ua>
+<title_en>Rebar - specific cut length</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000024</related_category>
+<related_category>Ц0000000040</related_category>
+<related_category>Ц0000009236</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000011</external_id>
+<title_ru>Арматура немерной длины</title_ru>
+<title_ua>Арматура немiрної довж.</title_ua>
+<title_en>Rebar - random length</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000013</external_id>
+<title_ru>Балка</title_ru>
+<title_ua>Балка</title_ua>
+<title_en>Double-T-beam</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000137</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000140</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000024</external_id>
+<title_ru>Проволока</title_ru>
+<title_ua>Дріт</title_ua>
+<title_en>Wire</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000010</related_category>
+<related_category>Ц0000000040</related_category>
+<related_category>Ц0000009236</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000040</external_id>
+<title_ru>Катанка</title_ru>
+<title_ua>Катанка</title_ua>
+<title_en>Wire rod</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000009236</related_category>
+<related_category>Ц0000000024</related_category>
+<related_category>Ц0000000010</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000041</external_id>
+<title_ru>Квадрат</title_ru>
+<title_ua>Квадрат</title_ua>
+<title_en>Square bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000091</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000137</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009236</external_id>
+<title_ru>Круг (ст)</title_ru>
+<title_ua>Круг (ст)</title_ua>
+<title_en>round bar (ст)</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000024</related_category>
+<related_category>Ц0000000010</related_category>
+<related_category>Ц0000000040</related_category>
+<related_category>Ц0000000027</related_category>
+<related_category>Ц0000000114</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000074</external_id>
+<title_ru>Уголок стальной горячекатаный</title_ru>
+<title_ua>Кутник г/к</title_ua>
+<title_en>Angled hot-rolled bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000140</related_category>
+<related_category>Ц0000000137</related_category>
+<related_category>Ц0000000027</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000091</external_id>
+<title_ru>Лист горячекатаный</title_ru>
+<title_ua>Лист гарячекатаний</title_ua>
+<title_en>Hot-rolled sheet</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000027</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000140</related_category>
+<related_category>Ц0000000137</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000007684</external_id>
+<title_ru>Лист горячекатаний конструкционный</title_ru>
+<title_ua>Лист гарячекатаний конструкційний</title_ua>
+<title_en>Hot-rolled construction sheet</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000092</external_id>
+<title_ru>Лист горячекатаный низколегированный</title_ru>
+<title_ua>Лист гарячекатаний низколегований</title_ua>
+<title_en>Hot-rolled alloyed sheet</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000105</external_id>
+<title_ru>Лист оцинкованный</title_ru>
+<title_ua>Лист оцинкований</title_ua>
+<title_en>Galvanised sheet</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000106</external_id>
+<title_ru>Лист ПВЛ</title_ru>
+<title_ua>Лист ПВЛ</title_ua>
+<title_en>Expanded steel sheet</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000108</external_id>
+<title_ru>Лист рифленый</title_ru>
+<title_ua>Лист рифлений</title_ua>
+<title_en>Threadplate</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000109</external_id>
+<title_ru>Лист металлический холоднокатаный</title_ru>
+<title_ua>Лист холоднокатаний</title_ua>
+<title_en>Cold-rolled seamless pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000154</external_id>
+<title_ru>Труба   ДУ</title_ru>
+<title_ua>Труба   ДУ</title_ua>
+<title_en>DN pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000155</external_id>
+<title_ru>Труба эмалированная</title_ru>
+<title_ua>Труба  емальована</title_ua>
+<title_en>Enameled pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000156</external_id>
+<title_ru>Труба горячекатаная</title_ru>
+<title_ua>Труба гарячекатана</title_ua>
+<title_en>Hot-rolled seamless pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000007563</external_id>
+<title_ru>Труба сварная</title_ru>
+<title_ua>Труба зварна</title_ua>
+<title_en>Welded round pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000163</external_id>
+<title_ru>Труба оцинкованная</title_ru>
+<title_ua>Труба оцинкована</title_ua>
+<title_en>Galvanised pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000165</external_id>
+<title_ru>Труба профильная</title_ru>
+<title_ua>Труба прямокутна</title_ua>
+<title_en>Rectangular pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000169</external_id>
+<title_ru>Трубы холоднокатаные бесшовные</title_ru>
+<title_ua>Труба холоднокатана</title_ua>
+<title_en>Cold-rolled seamless pipe</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000173</external_id>
+<title_ru>Швеллер</title_ru>
+<title_ua>Швелер</title_ua>
+<title_en>U-bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000027</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000137</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000175</external_id>
+<title_ru>Швеллер гнутый</title_ru>
+<title_ua>Швелер гнутий</title_ua>
+<title_en>Bent channel bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000176</external_id>
+<title_ru>Шестигранник</title_ru>
+<title_ua>Шестигранник</title_ua>
+<title_en>Hexagonal bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000027</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000137</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000007859</external_id>
+<title_ru>Шестигранник калиброванный</title_ru>
+<title_ua>Шестигранник калібрований</title_ua>
+<title_en>Cold-drawn hexagonal bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000179</external_id>
+<title_ru>Полоса стальная</title_ru>
+<title_ua>Штаба</title_ua>
+<title_en>Flat bar</title_en>
+<parent_id>00000000013</parent_id>
+<related_categories>
+<related_category>Ц0000000027</related_category>
+<related_category>Ц0000000147</related_category>
+<related_category>Ц0000000114</related_category>
+<related_category>Ц0000000137</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>00000000014</external_id>
+<title_ru>Нержавеющий металл</title_ru>
+<title_ua>Нержавіючий метал</title_ua>
+<title_en>Stainless metal</title_en>
+<parent_id></parent_id>
+<related_categories>
+<related_category></related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000019</external_id>
+<title_ru>Отвод н/ж</title_ru>
+<title_ua>Відвід н/ж</title_ua>
+<title_en>Stainless elbows</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000009233</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000020</external_id>
+<title_ru>Отвод н/ж полированный</title_ru>
+<title_ua>Відвід н/ж полірований</title_ua>
+<title_en>Stainless polished elbow</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000025</external_id>
+<title_ru>Проволока сварочная нержавеющая</title_ru>
+<title_ua>Дріт зварний н/ж</title_ua>
+<title_en>Stainless welding wire</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000026</external_id>
+<title_ru>Проволока нержавеющая</title_ru>
+<title_ua>Дріт н/ж</title_ua>
+<title_en>Stainless wire</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000009235</related_category>
+<related_category>Ц0000009233</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000028</external_id>
+<title_ru>Электроды для нержавейки</title_ru>
+<title_ua>Електроди н/ж</title_ua>
+<title_en>Welding rods for stainless steel</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000009235</related_category>
+<related_category>Ц0000009233</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000037</external_id>
+<title_ru>Другая нержавейка</title_ru>
+<title_ua>Інша нержавійка</title_ua>
+<title_en>Other stainless</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000000019</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000043</external_id>
+<title_ru>Квадрат н/ж</title_ru>
+<title_ua>Квадрат н/ж</title_ua>
+<title_en>Stainless square bar</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000009235</related_category>
+<related_category>Ц0000009233</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009235</external_id>
+<title_ru>Круг н/ж</title_ru>
+<title_ua>Круг н/ж</title_ua>
+<title_en>round bar stainless</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000009233</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000075</external_id>
+<title_ru>Уголок нержавеющий</title_ru>
+<title_ua>Кутник н/ж</title_ua>
+<title_en>Stainless angle bar</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000028</related_category>
+<related_category>Ц0000009233</related_category>
+<related_category>Ц0000000026</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009234</external_id>
+<title_ru>Лист н/ж</title_ru>
+<title_ua>Лист н/ж</title_ua>
+<title_en>sheet stainless</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000000028</related_category>
+<related_category>Ц0000009233</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000101</external_id>
+<title_ru>Лист н/ж перфорированный</title_ru>
+<title_ua>Лист н/ж перфорований</title_ua>
+<title_en>Perforated stainless sheet</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000000028</related_category>
+<related_category>Ц0000009233</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000103</external_id>
+<title_ru>Лист н/ж рифленный</title_ru>
+<title_ua>Лист н/ж рифлений</title_ua>
+<title_en>Corrugated stainless sheet</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000000028</related_category>
+<related_category>Ц0000009233</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000115</external_id>
+<title_ru>Метизы н/ж</title_ru>
+<title_ua>Метизи н/ж</title_ua>
+<title_en>Hardware</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000138</external_id>
+<title_ru>Рулоны н/ж</title_ru>
+<title_ua>Рулони н/ж</title_ua>
+<title_en>Stainless coil</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000009959</related_category>
+<related_category>Ц0000000026</related_category>
+<related_category>Ц0000009234</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000007851</external_id>
+<title_ru>Труба н/ж</title_ru>
+<title_ua>Труба н/ж</title_ua>
+<title_en>pipe stainless</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009959</external_id>
+<title_ru>Чашка дек. н/ж</title_ru>
+<title_ua>Чашка дек. н/ж</title_ua>
+<title_en>Cap</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000178</external_id>
+<title_ru>Шестигранник н/ж</title_ru>
+<title_ua>Шестигранник н/ж</title_ua>
+<title_en>Stainless hexagonal pipe</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000000037</related_category>
+<related_category>Ц0000000043</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000180</external_id>
+<title_ru>Полоса н/ж</title_ru>
+<title_ua>Штаба н/ж</title_ua>
+<title_en>Stainless flat bar</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+<related_category>Ц0000000037</related_category>
+<related_category>Ц0000000043</related_category>
+<related_category>Ц0000000028</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>00000000015</external_id>
+<title_ru>Алюминий</title_ru>
+<title_ua>Алюміній</title_ua>
+<title_en>Aluminium</title_en>
+<parent_id></parent_id>
+<related_categories>
+<related_category></related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009231</external_id>
+<title_ru>Круг алюминиевый</title_ru>
+<title_ua>Круг алюмінієвий</title_ua>
+<title_en>round bar алюмінієвий</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000000008</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000166</related_category>
+<related_category>Ц0000000157</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000073</external_id>
+<title_ru>Уголок алюминиевый</title_ru>
+<title_ua>Кутник алюмінієвий</title_ua>
+<title_en>Aluminium angle bar</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000157</related_category>
+<related_category>Ц0000009231</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009232</external_id>
+<title_ru>Лист алюминиевый</title_ru>
+<title_ua>Лист алюмінієвий</title_ua>
+<title_en>sheet алюмінієвий</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000000127</related_category>
+<related_category>Ц0000000134</related_category>
+<related_category>Ц0000000157</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000127</external_id>
+<title_ru>Плита алюминиевая Д16</title_ru>
+<title_ua>Плита алюмінієва 2017</title_ua>
+<title_en>Aluminium plate 2017</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000128</external_id>
+<title_ru>Плита алюминиевая АМГ5 (5083)</title_ru>
+<title_ua>Плита алюмінієва АМГ5 (5083)</title_ua>
+<title_en>Aluminium plate 5083</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000129</external_id>
+<title_ru>Плита алюминиевая АМГ6</title_ru>
+<title_ua>Плита алюмінієва АМГ6</title_ua>
+<title_en>Aluminium plates  AMG6</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000130</external_id>
+<title_ru>Плита алюминиевая АМЦ</title_ru>
+<title_ua>Плита алюмінієва АМЦ</title_ua>
+<title_en>Aluminium plates AMC</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000131</external_id>
+<title_ru>Плита алюминиевая В95 (7075, 7021)</title_ru>
+<title_ua>Плита алюмінієва В95 (7075, 7021)</title_ua>
+<title_en>Aluminium plates 7075,7021</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000132</external_id>
+<title_ru>Плита алюминиевая Д16</title_ru>
+<title_ua>Плита алюмінієва Д16</title_ua>
+<title_en>Aluminium plate D16</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000134</external_id>
+<title_ru>Полоса алюминиевая</title_ru>
+<title_ua>Полоса алюмінієва</title_ua>
+<title_en>Aluminium flat bar</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000127</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000157</external_id>
+<title_ru>Труба круглая алюминиевая</title_ru>
+<title_ua>Труба кругла алюмінієва</title_ua>
+<title_en>Aluminium round pipe</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000166</external_id>
+<title_ru>Алюминиевая профильная труба</title_ru>
+<title_ua>Труба прямокутна алюмінієва</title_ua>
+<title_en>Aluminium round pipe</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009231</related_category>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000171</external_id>
+<title_ru>Фольга алюминиевая</title_ru>
+<title_ua>Фольга алюмінієва</title_ua>
+<title_en>Aluminium foil</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+<related_category>Ц0000009232</related_category>
+<related_category>Ц0000000127</related_category>
+<related_category>Ц0000000134</related_category>
+</related_categories>
+</category>
+<category>
+<external_id>00000000018</external_id>
+<title_ru>Другие товары</title_ru>
+<title_ua>Інші товари</title_ua>
+<title_en>Other products</title_en>
+<parent_id></parent_id>
+<related_categories>
+<related_category></related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000027</external_id>
+<title_ru>Электроды</title_ru>
+<title_ua>Електроди</title_ua>
+<title_en>Electrodes</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000046</external_id>
+<title_ru>Комплект для крепления сетки ограждений</title_ru>
+<title_ua>Комплект для кріплення сітки огорож</title_ua>
+<title_en>Wire fence fixture set</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000114</external_id>
+<title_ru>Метизы</title_ru>
+<title_ua>Метизи</title_ua>
+<title_en>Hardware</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000124</external_id>
+<title_ru>Поддон</title_ru>
+<title_ua>Піддон</title_ua>
+<title_en>Pallets</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000137</external_id>
+<title_ru>Профнастил</title_ru>
+<title_ua>Профнастил</title_ua>
+<title_en>Profiled sheeting</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000140</external_id>
+<title_ru>Секция ограждения</title_ru>
+<title_ua>Секція огорожи</title_ua>
+<title_en>Wire fence section</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000143</external_id>
+<title_ru>Сетка сварная армированная</title_ru>
+<title_ua>Сітка зварна арм.</title_ua>
+<title_en>Reinforced welded wire fence</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000144</external_id>
+<title_ru>Сетка сварная оцинкованная</title_ru>
+<title_ua>Сітка зварна оц.</title_ua>
+<title_en>Galvanised wire fence</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000145</external_id>
+<title_ru>Сетка сварная ПВХ</title_ru>
+<title_ua>Сітка зварна ПВХ</title_ua>
+<title_en>Welded wire fence PVC</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000147</external_id>
+<title_ru>Сетка рабица</title_ru>
+<title_ua>Сітка рабиця</title_ua>
+<title_en>Rabitz type steel-wire</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000148</external_id>
+<title_ru>Сетка штукатурная</title_ru>
+<title_ua>Сітка штукатурна</title_ua>
+<title_en>Lath plaster wire</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000151</external_id>
+<title_ru>Столбы для сетки ограждений</title_ru>
+<title_ua>Стовп для кріплення сітки огорожі</title_ua>
+<title_en>Wire fence stakes</title_en>
+<parent_id>00000000018</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009309</external_id>
+<title_ru>_З'єднання різьбове</title_ru>
+<title_ua>_З'єднання різьбове</title_ua>
+<title_en>_зєднання різьбове</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009833</external_id>
+<title_ru>_З'єднання різьбове "американка"</title_ru>
+<title_ua>_З'єднання різьбове "американка"</title_ua>
+<title_en>_зєднання різьбове американка</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009319</external_id>
+<title_ru>Кран шаровой</title_ru>
+<title_ua>_Кран кульовий</title_ua>
+<title_en>_кран кульовий</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009314</external_id>
+<title_ru>Муфта</title_ru>
+<title_ua>_Муфта</title_ua>
+<title_en>_муфта</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000009311</external_id>
+<title_ru>Резьба</title_ru>
+<title_ua>_Різьба</title_ua>
+<title_en>_різьба</title_en>
+<parent_id>00000000014</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>00000000017</external_id>
+<title_ru>Кованые изделия</title_ru>
+<title_ua>Ковані вироби</title_ua>
+<title_en>Forged products</title_en>
+<parent_id></parent_id>
+<related_categories>
+<related_category></related_category>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000015</external_id>
+<title_ru>Верхушки</title_ru>
+<title_ua>Верхівки</title_ua>
+<title_en>Tops</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000016</external_id>
+<title_ru>Виноград</title_ru>
+<title_ua>Виноград</title_ua>
+<title_en>Grape</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000017</external_id>
+<title_ru>Виноградная лоза</title_ru>
+<title_ua>Виноградная лоза</title_ua>
+<title_en>Grapevine</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000021</external_id>
+<title_ru>Вставки декоративные</title_ru>
+<title_ua>Вставки декоративні</title_ua>
+<title_en>Decorative inserts</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000022</external_id>
+<title_ru>Готовые изделия</title_ru>
+<title_ua>Готові вироби</title_ua>
+<title_en>Finished goods</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000023</external_id>
+<title_ru>Декоративные панели-барокко</title_ru>
+<title_ua>Декоративні панелі-барокко</title_ua>
+<title_en>Decorative panels-baroque</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000029</external_id>
+<title_ru>Завитки декоративные</title_ru>
+<title_ua>Завитки декоративні</title_ua>
+<title_en>Curls decorative</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000030</external_id>
+<title_ru>Завесы</title_ru>
+<title_ua>Завіси</title_ua>
+<title_en>Curtain</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000031</external_id>
+<title_ru>Заглушки</title_ru>
+<title_ua>Заглушки</title_ua>
+<title_en>Blinds</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000032</external_id>
+<title_ru>Окончания перил кованые</title_ru>
+<title_ua>Закінчення перил ковані</title_ua>
+<title_en>Finishes forged forged</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000033</external_id>
+<title_ru>Заклепки, Нити</title_ru>
+<title_ua>Заклепки, Нитки</title_ua>
+<title_en>Rivets, Threads</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000042</external_id>
+<title_ru>Квадрат кованый</title_ru>
+<title_ua>Квадрат кований</title_ua>
+<title_en>Square forged</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000044</external_id>
+<title_ru>Цветы</title_ru>
+<title_ua>Квіти</title_ua>
+<title_en>Flowers</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000045</external_id>
+<title_ru>Кольца</title_ru>
+<title_ua>Кільця</title_ua>
+<title_en>Twine</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000047</external_id>
+<title_ru>Корзинки</title_ru>
+<title_ua>Корзинки</title_ua>
+<title_en>Baskets</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000072</external_id>
+<title_ru>Шары</title_ru>
+<title_ua>Кулі</title_ua>
+<title_en>Balls</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000110</external_id>
+<title_ru>Листья виноградные</title_ru>
+<title_ua>Листья виноградные</title_ua>
+<title_en>Leaves of grape</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000111</external_id>
+<title_ru>Листья</title_ru>
+<title_ua>Листя</title_ua>
+<title_en>Leaves</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000120</external_id>
+<title_ru>Накладки</title_ru>
+<title_ua>Накладки</title_ua>
+<title_en>Pads</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000121</external_id>
+<title_ru>Обжимки</title_ru>
+<title_ua>Обжимки</title_ua>
+<title_en>Crimson</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000125</external_id>
+<title_ru>Подпятники</title_ru>
+<title_ua>Підпятники</title_ua>
+<title_en>Bearings</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000126</external_id>
+<title_ru>Пики, наконечники</title_ru>
+<title_ua>Піки, накінечники</title_ua>
+<title_en>Peaks, tips</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000135</external_id>
+<title_ru>Полоса кованая декоративная</title_ru>
+<title_ua>Полоса кована декоративна</title_ua>
+<title_en>Forged decorative strip</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000139</external_id>
+<title_ru>Ручки дверные</title_ru>
+<title_ua>Ручки дверні</title_ua>
+<title_en>Handles for doors</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000150</external_id>
+<title_ru>Стойки</title_ru>
+<title_ua>Стійки, балясини</title_ua>
+<title_en>Racks</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000152</external_id>
+<title_ru>Столбы</title_ru>
+<title_ua>Стовпи</title_ua>
+<title_en>Pillars</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000158</external_id>
+<title_ru>Труба витая декоративная</title_ru>
+<title_ua>Труба кручена декоративна</title_ua>
+<title_en>Decorative twisted pipe</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000164</external_id>
+<title_ru>Труба профильная декоративная</title_ru>
+<title_ua>Труба профільна декоративна</title_ua>
+<title_en>Decorative decorative pipe</title_en>
+<parent_id>00000000017</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000174</external_id>
+<title_ru>Швеллер алюминиевый</title_ru>
+<title_ua>Швелер алюмінієвий</title_ua>
+<title_en>Aluminium U-bar</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000009</external_id>
+<title_ru>Алюминий шина</title_ru>
+<title_ua>Алюміній шина</title_ua>
+<title_en>Aluminium flat bar</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+</related_categories>
+</category>
+<category>
+<external_id>Ц0000000177</external_id>
+<title_ru>Шестигранник алюминиевый 2017</title_ru>
+<title_ua>Шестигранник алюмінієвий 2017</title_ua>
+<title_en>Aluminium hexagonal pipe</title_en>
+<parent_id>00000000015</parent_id>
+<related_categories>
+</related_categories>
+</category>
+</categories>

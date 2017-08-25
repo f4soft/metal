@@ -1,0 +1,17 @@
+User-agent: *
+
+Disallow: *search*
+Disallow: /admin/
+Disallow: /en/
+Disallow: */payment/
+Disallow: */reports/
+Disallow: */vacancies/
+Disallow: */info-and-documents/
+Disallow: */files/*
+Disallow: */uploads/*
+Disallow: *?city=*
+Disallow: */checkout/
+Disallow: */ckeditor/*
+
+Host: https://www.metall-holding.com.ua
+Sitemap: https://www.metall-holding.com.ua/sitemap.xml
