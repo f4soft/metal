@@ -9,7 +9,7 @@ $block_settings = BlockSettings::find()->one();
 ?>
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="h4 modal-title"><?= Yii::t('app', 'Ваш заказ') ?></h4>
+    <h4 class="h4 modal-title"><?= Yii::t('app', 'Корзина') ?></h4>
 </div>
 <div class="modal-body">
     <div class="container product-list-in-cart margin-top-0">
@@ -90,6 +90,7 @@ $block_settings = BlockSettings::find()->one();
                     <input type="checkbox" id="cutting-cart-popup" name="cutting-cart-popup"
                         <?= Cart::isCutting() ? ' checked' : '' ?>>
                     <label for="cutting-cart-popup"><?= Yii::t('app', 'Порезка')?></label>
+                    <p class="cart-delivery-info"><?= Yii::t('app', 'Cтоимость данных услуг не входит в сумму заказа') ?></p>
                 </td>
                 <td colspan="8" class="total-cell">
                     <p class="price"><?= Yii::t('app', 'Общая сумма заказа (с НДС)') ?>:<span
@@ -112,9 +113,33 @@ $block_settings = BlockSettings::find()->one();
         </div>
     </div>
 </div>
-<div class="modal-footer">
-    <div class="banner-small-block">
-<!--        <img src="/img/cart-banner.jpg">-->
-        <img src="<?= $block_settings::getBlockSettingsImage($block_settings->cart_banner, 945, 96)?>">
-    </div>
+<div class="modal-footer">    
+    
+    <?php $recommends = \app\models\Products::getRecommendProducts();           
+    if($recommends): ?>
+        <div class="container recommend-car-block">
+            <h2 class="h3 stripped-title"><span><?= Yii::t('app', 'Также рекомендуєм')?></span></h2>
+            <div class="recommend-carousel">
+                <?php foreach ($recommends as $recommend) :?>
+                <?php $recommend->city_id = $city->id; ?>
+                <?php $cityRecoment = $recommend->cityProducts; ?>                    
+                    <div class="item col-xs-2">
+                        <?php $url = \app\models\Products::getUrl($recommend); ?>
+                        <a href="<?= \yii\helpers\Url::to(["/$selectedCity/{$url}"])?>"> 
+                            <?php $catTemp = \app\models\ProductsCategories::findOne($recommend->category_id); ?>                        
+                            <?php $imageRecommend = '/' . $catTemp->getImageUrl(Yii::$app->params['imagePresets']['products']['recommend'], \app\models\ProductsCategories::tableName(), 'image'); ?>
+                            <?= \kartik\helpers\Html::img($imageRecommend, ['class' => "img", 'alt' => $recommend->image_alt, 'title' => $recommend->image_title]); ?>
+                            <div class="left">
+                                <span class="title"><?= $recommend->title?></span>
+                                <?php if(isset($cityRecoment[0])):?>
+                                    <span class="price"><?= number_format($cityRecoment[0]->price, 2, ".", "") ." / 1".$recommend->unit ?></span>
+                                <?php endif;?>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif;?>    
+
 </div>

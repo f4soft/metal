@@ -40,6 +40,7 @@ use Yii;
  * @property string $image_alt_ru
  * @property string $image_alt_ua
  * @property boolean $popular
+ * @property tinyint $recommend
 
  * @property string $article_description_ru
  * @property string $article_description_ua
@@ -75,7 +76,7 @@ class Products extends BaseModel
     public function rules()
     {
         return [
-            [['category_id', 'stock', 'status', 'popular', 'updated_at', 'created_at'], 'integer'],
+            [['category_id', 'stock', 'status', 'popular', 'recommend', 'updated_at', 'created_at'], 'integer'],
             [['category_id'], 'required'],
             [['diameter', 'length', 'width', 'height', 'depth', 'cut_price'], 'number'],
             [['article_description_ru', 'article_description_ua', 'article_description_en'], 'string'],
@@ -144,6 +145,7 @@ class Products extends BaseModel
             'updated_at' => Yii::t('app/admin', 'Дата обновления'),
             'created_at' => Yii::t('app/admin', 'Дата создания'),
             'popular' => Yii::t('app/admin', 'Популярный товар'),
+            'recommend' => Yii::t('app/admin', 'Рекомендуемый товар'),
         ];
     }
 
@@ -176,14 +178,19 @@ class Products extends BaseModel
      * @param Products $item
      * @return bool|string
      */
-    public static function getUrl(Products $item)
+    public static function getUrl(Products $item, $view = "catalog")
     {
         if($item instanceof Products){
             $parent = ProductsCategories::getRootCategory($item->category_id);
             $category = ProductsCategories::findOne(['id' => $item->category_id]);
-            return "catalog/{$parent->alias}/{$category->alias}/{$item->alias}";
+            return $view . "/{$parent->alias}/{$category->alias}/{$item->alias}";
         }
         return false;
+    }
+    
+    public static function getRecommendProducts($limit = 20)
+    {
+        return self::find()->getActive()->where(['recommend' => 1])->orderBy('id ASC')->limit($limit)->all();
     }
 
 }

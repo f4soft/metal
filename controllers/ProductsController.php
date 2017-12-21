@@ -28,12 +28,6 @@ class ProductsController extends AppController
 
         $modelContact = new ContactForm();
 
-        $city = $this->selectedCity;
-
-        if(!$city) {
-            $city = 'kiev';
-        }
-        $city = Cities::findOne(['alias' => $city]);
         if(!$product) {
             throw new NotFoundHttpException();
         }
@@ -48,7 +42,7 @@ class ProductsController extends AppController
             'product' => $product,
             'modelContact' => $modelContact,
             'subcategory' => $product->productCategory,
-            'city' => $city,
+            'city' => Cities::getByAliasOrKiev($this->selectedCity),
             'relatedCategories' => $relatedCategories,
         ]);
     }

@@ -21,57 +21,59 @@ $this->params['breadcrumbs'][] = ['label' => $title, 'template' => "<li class='b
                                                                       data-toggle="tab"><?= Yii::t('app', 'Я постоянный клиент') ?></a></div>
                 <div class="tab-content">
                     <div class="col-lg-12 col-md-12 start-form form-inner fade in tab-pane active yur-fiz-form" id="newUser">
-                        <a href="" class="registration-btn as-yur" data-type="yur"><?= Yii::t('app', 'Зарегистрироваться как юридическое лицо') ?></a>
-                        <a href="" class="registration-btn as-fiz" data-type="fiz"><?= Yii::t('app', 'Зарегистрироваться как физическое лицо') ?></a>
+                        <!--<a href="" class="registration-btn as-yur" data-type="yur"><= Yii::t('app', 'Зарегистрироваться как юридическое лицо') ?></a>
+                        <a href="" class="registration-btn as-fiz" data-type="fiz"><= Yii::t('app', 'Зарегистрироваться как физическое лицо') ?></a>-->
 
-                        <form action="" class="form has-custom-checkboxes" style="display: none" id="reg-form">
-                            <div class="select-wrapper">
-                                <span class="select-label"><?= Yii::t('app', 'выберите тип регистрации') ?></span>
-                                <select name="form-type" id="form-type" class="fiz yur">
-                                    <option value="fiz"><?= Yii::t('app', 'Физическое лицо') ?></option>
-                                    <option value="yur"><?= Yii::t('app', 'Юридическое лицо') ?></option>
+                        <form action="" class="form has-custom-checkboxes" style="/*display: none*/" id="reg-form">
+                            <!--<div class="select-wrapper">
+                                <span class="select-label"><= Yii::t('app', 'выберите тип регистрации') ?></span>
+                                <select name="form-type" id="form-type" class="fiz yur select-type-user">
+                                    <option value="fiz"><= Yii::t('app', 'Физическое лицо') ?></option>
+                                    <option value="yur"><= Yii::t('app', 'Юридическое лицо') ?></option>
                                 </select>
-                            </div>
+                            </div>-->
+                            <input type="hidden" class="select-type-user" name="" value="general-user-type">
                             <label for="name" class="label fiz-fileds visible">
-                                <span><?= Yii::t('app', 'Имя и Фамилия') ?></span>
-                                <input type="text" name="name" id="name" class="input-text fiz">
+                                <span><?= Yii::t('app', 'Имя и Фамилия') ?>*</span>
+                                <input type="text" name="name" id="name" class="input-text fiz general-user-type">
                             </label>
-                            <label for="company-name" class="label yur-fileds hidden">
+                            <label for="company-name" class="label yur-fileds /*hidden*/">
                                 <span><?= Yii::t('app', 'Название компании')?></span>
-                                <input type="text" name="company" id="company" class="input-text yur">
+                                <input type="text" name="company" id="company" class="input-text yur general-user-type">
                             </label>
-                            <label for="company-adress" class="label yur-fileds hidden">
-                                <span><?= Yii::t('app', 'Адрес')?></span>
+                            <!--<label for="company-adress" class="label yur-fileds hidden">
+                                <span><= Yii::t('app', 'Адрес')?></span>
                                 <input type="text" name="city" id="city" class="input-text yur">
+                            </label>-->
+                            <label for="company-kod-okpo" class="label yur-fileds general-user-type/*hidden*/">
+                                <span><?= Yii::t('app', 'Код ЕДРПОУ')?></span>
+                                <input type="text" name="okpo" id="okpo" class="input-text yur general-user-type">
                             </label>
-                            <label for="company-kod-okpo" class="label yur-fileds hidden">
-                                <span><?= Yii::t('app', 'Код ОКПО')?></span>
-                                <input type="text" name="okpo" id="okpo" class="input-text yur">
-                            </label>
-                            <label for="company-kod-inn" class="label yur-fileds hidden">
-                                <span><?= Yii::t('app', 'Код ИНН')?></span>
+                            <!--<label for="company-kod-inn" class="label yur-fileds hidden">
+                                <span><= Yii::t('app', 'Код ИНН')?></span>
                                 <input type="text" name="inn" id="inn" class="input-text yur">
-                            </label>
+                            </label>-->
                             <label for="city" class="label fiz-fileds visible">
-                                <span><?= Yii::t('app', 'Город')?></span>
-                                <input type="text" name="city" id="city" class="input-text fiz">
+                                <span><?= Yii::t('app', 'Город')?>*</span>
+                                <input type="text" name="city" id="city" class="input-text fiz general-user-type">
                             </label>
                             <label for="email" class="label visible">
-                                <span><?= Yii::t('app', 'Email')?></span>
-                                <input type="email" name="email" id="email" class="input-text fiz yur">
+                                <span><?= Yii::t('app', 'Email')?>*</span>
+                                <input type="email" name="email" id="email" class="input-text fiz yur general-user-type">
                             </label>
                             <label for="tel" class="label visible">
-                                <span><?= Yii::t('app', 'Мобильный телефон')?></span>
-                                <input type="text" name="phone" id="phone" class="input-text fiz yur">
+                                <span><?= Yii::t('app', 'Мобильный телефон')?>*</span>
+                                <input type="text" name="phone" id="phone" class="input-text fiz yur general-user-type">
                             </label>
                             <label for="add-info" class="label">
                                 <span><?= Yii::t('app', 'Примечание к заказу')?></span>
-                                <textarea name="message" id="message" cols="30" rows="10" class="textarea fiz yur"></textarea>
+                                <textarea name="message" id="message" cols="30" rows="10" class="textarea fiz yur general-user-type"></textarea>
                             </label>
-                            <input type="hidden" name="user" value="new" class="fiz yur">
-                            <input type="checkbox" name="subscribe" id="subscribe" class="fiz yur">
+                            <input type="hidden" name="user" value="new" class="fiz yur general-user-type">
+                            <input type="checkbox" name="subscribe" id="subscribe" class="fiz yur general-user-type">
                             <label for="subscribe" class="label-subscribe-to-news">
                                 <?= Yii::t('app', 'Подписаться на новости и акции')?></label>
+                            <label class="label label-notifi-left">* <?= Yii::t('app', 'значит что поле обязательное')?></label>
                         </form>
                     </div>
                     <div class="col-lg-12 exist-user form-inner tab-pane fade" id="oldUser">

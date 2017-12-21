@@ -6,5 +6,5 @@
         'preset' => 'full',
         'clientOptions' => require(Yii::getAlias("@app/config/ckeditor.php"))
     ]) ?>
-
+    
 </div>

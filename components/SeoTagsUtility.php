@@ -91,6 +91,19 @@ class SeoTagsUtility
             ],
             'tel' => '(057) 751-95-10'
         ],
+        'poltava' => [
+            'ru' => [
+                'name' => 'Полтава',
+                'name1' => 'Полтаве',
+                'name2' => 'Полтаве',
+            ],
+            'ua' => [
+                'name' => 'Полтава',
+                'name1' => 'Полтаві',
+                'name2' => 'Полтаві',
+            ],
+            'tel' => '(0532) 610-910'
+        ],
     ];
 
 //    const CITY = ''
@@ -102,17 +115,33 @@ class SeoTagsUtility
         SeoTagsUtility::$description = $description;
     }
 
-    public static function setCategoryMetaTags($category)
+    public static function setCategoryMetaTags($category, $view = "catalog")
     {
         $lang = Yii::$app->params['langs'][Yii::$app->language];
         $city = Yii::$app->request->get('city') ? Yii::$app->request->get('city') : 'kiev';
-        $url = "/{$lang}/[city]/catalog/{$category->alias}";
-        $tags = SeoTags::getMetaTags($url);
-        if ($tags) {
+        
+        $meta_data = [];
+        
+        $url_individual = "/{$lang}/[city]/$view/{$category->alias}";
+        
+        if($category->meta_keywords && $category->meta_description && $view == "catalog"){
+            $meta_data['title'] = $category->meta_keywords;
+            $meta_data['description'] = $category->meta_description;
+        }
+        
+        if(!$meta_data){
+            $tags = SeoTags::getMetaTags($url_individual);
+            if($tags){
+                $meta_data['title'] = $tags->title;
+                $meta_data['description'] = $tags->description;
+            }
+        }        
+        
+        if ($meta_data) {
             $replace = SeoTagsUtility::$cities[$city][$lang]['name1'];
-            $title = Helper::str_replace_first('[city]',$replace , $tags->title);
+            $title = Helper::str_replace_first('[city]',$replace , $meta_data['title']);
 
-            $description = Helper::str_replace_first('[city]', $replace, $tags->description);
+            $description = Helper::str_replace_first('[city]', $replace, $meta_data['description']);
             $replace = SeoTagsUtility::$cities[$city][$lang]['name2'];
             $description = Helper::str_replace_first('[city]', $replace, $description);
             $replace = SeoTagsUtility::$cities[$city]['tel'];
@@ -122,7 +151,7 @@ class SeoTagsUtility
         }
     }
 
-    public static function setSubCategoryMetaTags($subcategory)
+    public static function setSubCategoryMetaTags($subcategory, $view = "catalog")
     {
         $request_get = Yii::$app->request->get();
         $lang = Yii::$app->params['langs'][Yii::$app->language];
@@ -130,10 +159,10 @@ class SeoTagsUtility
         
         $meta_data = [];
         
-        $url_template = "/{$lang}/[city]/catalog/[category]/[subcategory]";
-        $url_individual = "/{$lang}/[city]/catalog/{$request_get['category']}/{$request_get['subcategory']}";      
+        $url_template = "/{$lang}/[city]/$view/[category]/[subcategory]";
+        $url_individual = "/{$lang}/[city]/$view/{$request_get['category']}/{$request_get['subcategory']}";      
         
-        if($subcategory->meta_keywords && $subcategory->meta_description){
+        if($subcategory->meta_keywords && $subcategory->meta_description && $view == "catalog"){
             $meta_data['title'] = $subcategory->meta_keywords;
             $meta_data['description'] = $subcategory->meta_description;
         }

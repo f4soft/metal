@@ -60,6 +60,7 @@ use kartik\tabs\TabsX;
         ]); ?>
     <?php endif; ?>
     <?= $form->field($model, 'title_ua')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title_price_ua')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'article_title_ua')->textInput(['maxlength' => true]) ?>
 
@@ -76,5 +77,7 @@ use kartik\tabs\TabsX;
     <?= $form->field($model, 'meta_keywords_ua')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'meta_description_ua')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'page_description_ua')->textarea(['rows' => 3]) ?>
 
 </div>

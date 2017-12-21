@@ -77,7 +77,7 @@
             // instead of a settings object
           ]
     });
-
+    
     $('.related-product-carousel').slick({
         dots: false,
         infinite: true,
@@ -279,7 +279,42 @@
                         $('#cart-popup .table-calc tr.product-row').each(function () {
                             var quantity =  $(this).find('.count').val();
                             checkUnit(this, quantity);
-                        });
+                        });                       
+                        
+                        setTimeout(function(){ 
+
+                            $('.recommend-carousel').slick({
+                                dots: false,
+                                infinite: true,
+                                speed: 300,
+                                slidesToShow: 6,
+                                slidesToScroll: 1,
+                                responsive: [
+                                    {
+                                      breakpoint: 1200,
+                                      settings: {
+                                        slidesToShow: 4,
+                                      }
+                                    },
+                                    {
+                                      breakpoint: 768,
+                                      settings: {
+                                        slidesToShow: 2,
+                                      }
+                                    },
+                                    {
+                                      breakpoint: 414,
+                                      settings: {
+                                        slidesToShow: 1,
+                                      }
+                                    }
+                                    // You can unslick at a given breakpoint now by adding:
+                                    // settings: "unslick"
+                                    // instead of a settings object
+                                  ]
+                            });
+
+                        }, 300);                        
                     }
                 }
             });
@@ -311,6 +346,41 @@
                     if (response.count == 0) {
                         $('#cart-popup').modal('toggle');
                     }
+
+                    setTimeout(function(){ 
+
+                        $('.recommend-carousel').slick({
+                            dots: false,
+                            infinite: true,
+                            speed: 300,
+                            slidesToShow: 6,
+                            slidesToScroll: 1,
+                            responsive: [
+                                {
+                                  breakpoint: 1200,
+                                  settings: {
+                                    slidesToShow: 4,
+                                  }
+                                },
+                                {
+                                  breakpoint: 768,
+                                  settings: {
+                                    slidesToShow: 2,
+                                  }
+                                },
+                                {
+                                  breakpoint: 414,
+                                  settings: {
+                                    slidesToShow: 1,
+                                  }
+                                }
+                                // You can unslick at a given breakpoint now by adding:
+                                // settings: "unslick"
+                                // instead of a settings object
+                              ]
+                        });
+
+                        }, 300); 
                 }
             }
         });
@@ -329,9 +399,9 @@
         //remove all errors if any
         $('.order-checkout-block .form span.form-error').remove();
 
-        var user_type = $('.order-checkout-block .form select').val(),
+        var user_type = $('.order-checkout-block .form .select-type-user').val(),
             data = {'type': user_type};
-        //find all necessary values
+        //find all necessary values       
         $('.order-checkout-block .form .'+ user_type).each(function (i,el) {
             var $el = $(el),
                 name = $el.attr('name');
@@ -342,7 +412,7 @@
                     data[name] = 'on';
                 }
             }
-        });
+        });       
         $.ajax({
             url: lang + '/checkout/order',
             type: 'post',
@@ -725,25 +795,44 @@
         });
     }
 
-
-
-    if(!$('.table-calc tr').hasClass('hidden')) {
-        $('.show-more-items').hide();
+    if($('.table-calc tr').hasClass('hidden')) {         
+        var rowHidden = $('.table-calc tr.hidden').size();
+        $('.show-more-items span').text('('+rowHidden+')');
+        $('.show-more-items').show();        
+    } else{
+        $('.show-more-items').hide();               
     }
 
     $('.show-more-items').on('click', function (e) {
         e.preventDefault();
         $('.table-calc tr.hidden').each(function (index, value) {
-            // if(index < 25) {
-            //
-            // }
             $(value).removeClass('hidden');
         });
         if(!$('.table-calc tr').hasClass('hidden')) {
+            $('.show-more-items span').text('');
             $('.show-more-items').hide();
+            $('.select-show-row').val(5000);
         }
     });
-
+    
+    var lastScrollTop = 300;    
+    $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            $('.arrow-page-up').show('400');
+            lastScrollTop = st; 
+        } else if(st < 300) {
+            $('.arrow-page-up').hide('400');
+            lastScrollTop = 300;
+        }        
+    });   
+    
+    $('.arrow-page-up').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $(".extra-top-navbar").offset().top
+        }, 400);
+    });
+ 
     if(window.location.hash.includes('service')) {
         var hash = window.location.hash;
         var selector = "a[href='" + hash + "']";

@@ -9,6 +9,7 @@ $this->params['breadcrumbs'][] = ['label' => $subcategory->title, 'template' => 
             <span class='breadcrumbs-title' itemprop = 'name'>{link}</span>
             </li>"];
 $user_id = false;
+$image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['categories']['page'], \app\models\ProductsCategories::tableName(), 'image');
 //$image = '/' . $subcategory->getImageUrl(false, \app\models\ProductsCategories::tableName(), 'image');
 ?>
 <div class="container-fluid page-title-block margin-top-0 margin-bottom-0">
@@ -16,9 +17,13 @@ $user_id = false;
     <div class="container-fluid page-title-content">
         <div class="container">
             <span class="image page-icon"
-                  style="background: url('<?= $head_img->getImageCircle(); ?>') no-repeat center center"></span>
+                  style="background: url('<?= $image; ?>') no-repeat center center"></span>
             <h1 class="h1 page-title"><?= $title?></h1>
-            <h5 class="h5 page-sub-title"><span><i class="i-holder prev"></i><?= Yii::t('app', 'Самый большой выбор металлопроката')?><i class="i-holder next"></i></span></h5>
+            <?php if($subcategory->page_description):?>
+                <div class="page-sub-description"><span><?= $subcategory->page_description ?></span></div>
+            <?php else:?>
+                <h5 class="h5 page-sub-title"><span><i class="i-holder prev"></i><?= Yii::t('app', 'Самый большой выбор металлопроката')?><i class="i-holder next"></i></span></h5>
+            <?php endif;?>
         </div>
     </div>
 </div>
@@ -58,7 +63,7 @@ $user_id = false;
                     <?php $product->city_id = $city->id ?>
                     <?php if ($productAddInfo = $product->cityProducts): ?>
                         <?php $count ++; ?>
-                        <tr class="product-row <?php if ($count > 6) {
+                        <tr class="product-row <?php if ($count > current(array_keys($rowShow))) {
                             echo 'hidden';
                         } ?>">
                             <?php if (Calculator::isRecalculate($product)): ?>
@@ -103,7 +108,7 @@ $user_id = false;
                                 <?= Html::input('hidden', 'CartProducts[product_id]', $product->id); ?>
                                 <?= Html::input('hidden', 'CartProducts[unit]', $product->unit); ?>
                                 <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price); ?>
-                                <?= Html::submitButton(Yii::t('app', 'Заказать').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart', 'data-selector' => 'add_' . $product->id]) ?>
+                                <?= Html::submitButton(Yii::t('app', 'Купить').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart', 'data-selector' => 'add_' . $product->id]) ?>
                                 <?= Html::endForm(); ?>
                             </td>
                         </tr>
@@ -112,13 +117,21 @@ $user_id = false;
             <?php endforeach; ?>
             </tbody>
         </table>
-        <div class="btn-holder">
-            <?php if (($count - 6) > 0): ?>
-                <button class="btn show-more-items"><?= Yii::t('app', 'Посмотреть другие позиции') ?> (<?= $count - 6 ?>
-                    )
+        
+        <div class="col-xs-12 col-lg-offset-4 col-lg-4">
+            <div class="btn-holder">
+                <button class="btn show-more-items">
+                    <?= Yii::t('app', 'Посмотреть другие позиции') ?> <span></span>
                 </button>
-            <?php endif; ?>
+            </div>
         </div>
+        <div class="col-xs-12 col-lg-4 padding-right-0">
+            <?php \yii\bootstrap\ActiveForm::begin(['action' => null]); ?>
+            <?= \kartik\helpers\Html::dropDownList('show-row', '', $rowShow, ['class' => 'select-show-row select', 'onchange' => 'reshowRow(this)'] );?>
+            <?php \yii\bootstrap\ActiveForm::end()?>
+        </div>
+        
+        <span class="arrow-page-up glyphicon glyphicon-arrow-up"></span>
 
     </div>
 

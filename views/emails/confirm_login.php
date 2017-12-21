@@ -50,8 +50,7 @@
                 <tr>
                     <td class="confirm-text-small"
                         style="padding:0 70px; color:#6e6e6e; font-size:12px; font-weight:100; padding-bottom:40px; padding-top:30px">
-                        <?= Yii::t('app', 'Вы получили это письмо потому что вы или кто-то от вашего имени зарегистрировались на сайте
-                        http://www.metall-holding.com.ua/. Если это были не вы, то просто проигнорируйте это письмо.')?>
+                        <?= Yii::t('app', 'C уважением, http://www.metall-holding.com.ua/.<br />Данное письмо создано автоматически, пожалуйста не отвечайте на него.')?>
                     </td>
                 </tr>
                 <tr class="last-row">

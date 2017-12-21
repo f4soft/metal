@@ -75,8 +75,11 @@ class OfficesController extends AppController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $cities = ArrayHelper::map(Cities::find()->getActive()->all(), 'id', 'title');
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $cities = ArrayHelper::map(Cities::find()->getActive()->all(), 'id', 'title');        
+        $post = Yii::$app->request->post();    
+        if ($post && $model->validate()) {        
+            $model->load($post);
+            $model->save();
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [

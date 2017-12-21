@@ -72,6 +72,7 @@ return [
             'small' => [69, 69],
             'related' => [130, 130],
             'sub' => [118, 118],
+            'page' => [190, 190], 
             //'catalog' => [740, 560],
             'catalog' => [360, 272],
             'product' => [236, 236],
@@ -80,6 +81,7 @@ return [
             'admin' => [100,100],
             'main' => [236, 236],
             'popular' => [130, 130],
+            'recommend' => [130, 130],
         ],
         'services-small' => [
             'admin' => [100, 100],

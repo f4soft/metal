@@ -92,7 +92,7 @@ class SalesController extends AppController
         if(!ProductsCategories::checkSales($category->lft, $category->rgt)){
             return $this->redirect(['sales/index']);
         }
-        SeoTagsUtility::setCategoryMetaTags($category);
+        SeoTagsUtility::setCategoryMetaTags($category, 'sales');
         
 //        $root = Yii::getAlias('@webroot');
 //        $files = ['filePrice' => '', 'priceImage' => ''];
@@ -113,6 +113,7 @@ class SalesController extends AppController
             'category' => $category,
             'modelContact' => $modelContact,
             'selectedCity' => $this->selectedCity,
+            'city' => Cities::getByAliasOrKiev($this->selectedCity),
 //            'files' => $files,
             'head_img' => $head_img,
         ]);
@@ -132,17 +133,11 @@ class SalesController extends AppController
             return $this->redirect(['sales/index']);
         }        
 
-        SeoTagsUtility::setSubCategoryMetaTags($subcategory);
+        SeoTagsUtility::setSubCategoryMetaTags($subcategory, 'sales');
 
         $modelContact = new ContactForm();
         $services = Services::getAll();
-        $city = $this->selectedCity;
-        if(!$city) {
-            $city = 'kiev';
-        }      
-        $city = Cities::findOne(['alias' => $city]);
         $products = $subcategory->productsale;
-//\yii\helpers\VarDumper::dump(count($products));  exit();
         $allSubcategorySale = ProductsCategories::getCategoriesSaleChildren($category);
         if(\Yii::$app->request->post()){
             $subcategory = ProductsCategories::findOne(['id' => \Yii::$app->request->post()['category']]);
@@ -170,6 +165,15 @@ class SalesController extends AppController
 //                $files['fileImage'] = $fileImage;
 //            }
 //        }
+        
+        $rowShow = [ 
+            25 => Yii::t('app', 'Отображать на сайте по').' 25', 
+            50 => Yii::t('app', 'Отображать на сайте по').' 50', 
+            75 => Yii::t('app', 'Отображать на сайте по').' 75', 
+            100 => Yii::t('app', 'Отображать на сайте по').' 100',
+            5000 => Yii::t('app', 'Отображать все')
+        ];
+        
         $head_img = PagesImages::find()->where(['slug' => 'sales'])->one();
         return $this->render('subcategory', [
             'subcategory' => $subcategory,
@@ -178,9 +182,10 @@ class SalesController extends AppController
             'services' => $services,
             'selectedCity' => $this->selectedCity,
             'products' => $products,
-            'city' => $city,
+            'city' => Cities::getByAliasOrKiev($this->selectedCity),
             'allSubcategorySale' => $allSubcategorySale,
             'head_img' => $head_img,
+            'rowShow' => $rowShow,
         ]);
     }
 }

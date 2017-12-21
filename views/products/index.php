@@ -117,10 +117,7 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
                     <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price);?>
                     <?= Html::submitButton(Yii::t('app', 'Оформить заказ').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart'])?>
                 <?= Html::endForm();?>
-            </div>
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 table-description">
-            </div>    
+            </div> 
             
         </div>
     </div>
@@ -218,6 +215,9 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
 
             <div class="text">
                 <?= $product->article_description?>
+                <?php if($city->product_description):?>
+                    <p><?= $city->product_description ?></p>
+                <?php endif;?>
             </div>
             <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
 

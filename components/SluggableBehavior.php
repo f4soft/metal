@@ -15,7 +15,8 @@ class SluggableBehavior extends Behavior
     public function events()
     {
         return [
-            ActiveRecord::EVENT_BEFORE_VALIDATE => 'getSlug'
+            ActiveRecord::EVENT_BEFORE_VALIDATE => 'getSlug',
+            ActiveRecord::EVENT_BEFORE_UPDATE => 'updateSlug',
         ];
     }
 
@@ -26,6 +27,11 @@ class SluggableBehavior extends Behavior
         } else {
 //            $this->owner->{$this->out_attribute} = $this->generateSlug( $this->owner->{$this->in_attribute} );
         }
+    }
+    
+    public function updateSlug($event)
+    {
+        $this->owner->{$this->out_attribute} = $this->generateSlug( $this->owner->{$this->in_attribute} );
     }
 
     private function generateSlug( $slug )

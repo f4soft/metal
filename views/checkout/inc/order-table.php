@@ -21,7 +21,7 @@ $unitsList = Yii::$app->params["units"]
             <td colspan="2"><?= $product->price ?> <?= Yii::t('app', 'грн') ?></td>
         </tr>
         <?php endforeach; ?>
-        <tr>
+        <tr class="delivery-option">
             <td colspan="2">
                 <input type="checkbox" name="delivery-cart" id="delivery" <?= Cart::isDelivery() ? ' checked' : '' ?>>
                 <label for="delivery"><?= Yii::t('app', 'Доставка') ?></label>
@@ -31,6 +31,9 @@ $unitsList = Yii::$app->params["units"]
                 <label for="cutting"><?= Yii::t('app', 'Порезка') ?></label>
             </td>
             <td colspan="2"></td>
+        </tr>
+        <tr class="delivery-info">
+            <td colspan="5"><?= Yii::t('app', 'Стоимость данных услуг не входит в сумму заказа') ?></td>
         </tr>
         <tr class="summary-money">
             <td colspan="3"><?= Yii::t('app', 'Общая стоимость заказа:') ?></td>

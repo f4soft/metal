@@ -11,6 +11,7 @@ use app\models\ProductsCategories;
 use app\models\Sales;
 use app\models\Services;
 use app\models\PagesImages;
+use app\models\Offices;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use Yii;
@@ -18,7 +19,7 @@ use Yii;
 class CatalogController extends AppController
 {
     public function actionIndex()
-    {
+    {                
         $modelContact = new \app\models\Forms\ContactForm();
         $sales = ProductsCategories::getSubcategorySaleRand();        
         $rootCategories = ProductsCategories::getCategoriesRoots();
@@ -35,7 +36,7 @@ class CatalogController extends AppController
     }
 
     public function actionCategory($category)
-    {
+    {        
         $category = ProductsCategories::findOne(['alias' => $category]);
         if (!$category) {
             throw new NotFoundHttpException();
@@ -64,6 +65,7 @@ class CatalogController extends AppController
             'selectedCity' => $this->selectedCity,
             'files' => $files,
             'head_img' => $head_img,
+            'city' => Cities::getByAliasOrKiev($this->selectedCity), 
         ]);
     }
 
@@ -78,16 +80,12 @@ class CatalogController extends AppController
         if (!$subcategory) {
             throw new NotFoundHttpException();
         }
-//\yii\helpers\VarDumper::dump($subcategory); exit();
+
         SeoTagsUtility::setSubCategoryMetaTags($subcategory);
         $sales = Sales::getSales();
         $modelContact = new ContactForm();
         $services = Services::getAll();
-        $city = $this->selectedCity;
-        if(!$city) {
-            $city = 'kiev';
-        }      
-        $city = Cities::findOne(['alias' => $city]);
+
         $products = $subcategory->products;
 //\yii\helpers\VarDumper::dump($products[0]);  exit();
         $allSubcategories = ProductsCategories::getCategoriesChildren($category);
@@ -117,7 +115,17 @@ class CatalogController extends AppController
                 $files['fileImage'] = $fileImage;
             }
         }
+
         $head_img = PagesImages::find()->where(['slug' => $category->alias])->one();
+        
+        $rowShow = [ 
+            25 => Yii::t('app', 'Отображать на сайте по').' 25', 
+            50 => Yii::t('app', 'Отображать на сайте по').' 50', 
+            75 => Yii::t('app', 'Отображать на сайте по').' 75', 
+            100 => Yii::t('app', 'Отображать на сайте по').' 100',
+            5000 => Yii::t('app', 'Отображать все')
+        ];
+       
         return $this->render('subcategory', [
             'subcategory' => $subcategory,
             'category' => $category,
@@ -126,10 +134,11 @@ class CatalogController extends AppController
             'services' => $services,
             'selectedCity' => $this->selectedCity,
             'products' => $products,
-            'city' => $city,
+            'city' => Cities::getByAliasOrKiev($this->selectedCity),
             'allSubcategories' => $allSubcategories,
             'files'=>$files,
             'head_img' => $head_img,
+            'rowShow' => $rowShow,
         ]);
     }
 }

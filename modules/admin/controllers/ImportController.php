@@ -86,6 +86,10 @@ class ImportController extends AppController
                             $model->alias = 'chernihiv';
                             $model->is_default = 0;
                         }
+                        if ($model->title_ru == 'Полтава') {
+                            $model->alias = 'poltava';
+                            $model->is_default = 0;
+                        }
                         $model->save();
                     }
                     Yii::$app->session->setFlash('success', "Импорт городов прошел успешно!");
@@ -112,7 +116,7 @@ class ImportController extends AppController
                 $content = file_get_contents($file);
                 $parser = new XmlParser();
 
-                $content = $parser->parse($content, '');
+                $content = $parser->parse($content, '');              
                 if (!empty($content['category'])&& is_array($content['category'])&& count($content['category']) ) {
                     $content = reset($content);
 
@@ -184,7 +188,12 @@ class ImportController extends AppController
                     $key_end = $key_start + 100;
                     $key_end = $key_end < $key_all ? $key_end : $key_all;
                     $key_next_iteration = $key_end + 1;
-                    $need_next_iteration = $key_next_iteration < $key_all ? true : false;  
+                    $need_next_iteration = $key_next_iteration < $key_all ? true : false; 
+                    
+                    if($key_start == 0){
+                        Products::updateAll(['updated_at' => NULL], []);
+                        ProductsPricesToCities::updateAll(['updated_at' => NULL], []);                        
+                    }
                     
                     if ($products && is_array($products) && count($products)) {
                         for($key_start; $key_start <= $key_end; $key_start ++) {
@@ -326,6 +335,11 @@ class ImportController extends AppController
                             }
                             
                             unset($model);
+                            
+                            if($need_next_iteration == false){
+                                Products::deleteAll(['updated_at' => NULL]);
+                                ProductsPricesToCities::deleteAll(['updated_at' => NULL]); 
+                            }
                         }
                         
                         return [                            

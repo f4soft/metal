@@ -98,6 +98,9 @@ $this->params['breadcrumbs'][] = ['label' => $title, 'template' => "<li class='b
 
         <div class="text">
             <?= $category->article_description?>
+            <?php if($city->cat_description):?>
+                <p><?= $city->cat_description ?></p>
+            <?php endif;?>
         </div>
         <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
 

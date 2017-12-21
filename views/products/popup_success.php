@@ -7,7 +7,9 @@
             </div>
             <div class="modal-body">
                 <h2 class="title"><?= Yii::t('app', 'Товар добавлен в корзину!')?></h2>
-                <p class="modal-text"><?= Yii::t('app', 'Ваш товар был успешно добавлен в корзину.')?></p>
+                <br />
+                <a class="dialog-close" data-dismiss="modal"><?= Yii::t('app', 'Продолжить покупки')?></a>
+                <a href="/checkout/" class="make-order"><?= Yii::t('app', 'Оформить заказ')?></a>
             </div>
         </div>
     </div>

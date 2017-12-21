@@ -17,6 +17,9 @@ use creocoder\nestedsets\NestedSetsBehavior;
  * @property string $title_ru
  * @property string $title_ua
  * @property string $title_en
+ * @property string $title_price_ru
+ * @property string $title_price_ua
+ * @property string $title_price_en
  * @property string $image
  * @property string $image_alt_ru
  * @property string $image_alt_ua
@@ -60,12 +63,14 @@ use creocoder\nestedsets\NestedSetsBehavior;
 class ProductsCategories extends BaseModel
 {
     public $title;
+    public $title_price;
     public $image_alt;
     public $image_title;
     public $meta_keywords;
     public $meta_description;
     public $article_title;
     public $article_description;
+    public $page_description;
     public $parent_id;
 
     public $file_price;
@@ -136,8 +141,8 @@ class ProductsCategories extends BaseModel
                 'maxSize' => Yii::$app->params['maxSize']],
             [['alias'], 'unique'],
             [['lft', 'rgt', 'updated_at', 'created_at', 'status','show_price','show_catalog'], 'integer'],
-            [['article_description_ru', 'article_description_ua', 'article_description_en'], 'string'],
-            [['title_ru', 'title_ua', 'title_en', 'image_alt_ru', 'image_alt_ua', 'image_alt_en', 'image_title_ru',
+            [['article_description_ru', 'article_description_ua', 'article_description_en', 'page_description_ru', 'page_description_ua', 'page_description_en'], 'string'],
+            [['title_ru', 'title_ua', 'title_en', 'title_price_ru', 'title_price_ua', 'title_price_en', 'image_alt_ru', 'image_alt_ua', 'image_alt_en', 'image_title_ru',
                 'image_title_ua', 'image_title_en', 'meta_keywords_ru', 'meta_keywords_ua', 'meta_keywords_en',
                 'meta_description_ru', 'meta_description_ua', 'meta_description_en', 'article_title_ru',
                 'article_title_ua', 'article_title_en', 'alias', 'external_id',
@@ -155,7 +160,9 @@ class ProductsCategories extends BaseModel
             'title_ru' => Yii::t('app/admin', 'Заголовок'),
             'title_ua' => Yii::t('app/admin', 'Заголовок'),
             'title_en' => Yii::t('app/admin', 'Заголовок'),
-
+            'title_price_ru' => Yii::t('app/admin', 'Заголовок для цен'),
+            'title_price_ua' => Yii::t('app/admin', 'Заголовок для цен'),
+            'title_price_en' => Yii::t('app/admin', 'Заголовок для цен'),
             'image' => Yii::t('app/admin', 'Фото для категории'),
             'image_alt_en' => Yii::t('app/admin', 'Альтернативный текст для фото'),
             'image_alt_ru' => Yii::t('app/admin', 'Альтернативный текст для фото'),
@@ -177,6 +184,9 @@ class ProductsCategories extends BaseModel
             'article_description_ru' => Yii::t('app/admin', 'СЕО описание'),
             'article_description_ua' => Yii::t('app/admin', 'СЕО описание'),
             'article_description_en' => Yii::t('app/admin', 'СЕО описание'),
+            'page_description_ru' => Yii::t('app/admin', 'Описание страницы'),
+            'page_description_ua' => Yii::t('app/admin', 'Описание страницы'),
+            'page_description_en' => Yii::t('app/admin', 'Описание страницы'),
 
             'file_price_ru' => Yii::t('app/admin', 'Прайс'),
             'file_price_ua' => Yii::t('app/admin', 'Прайс'),
@@ -205,12 +215,14 @@ class ProductsCategories extends BaseModel
     public function afterFind()
     {
         $this->title = $this->{self::getTranslate('title')};
+        $this->title_price = $this->{self::getTranslate('title_price')};
         $this->image_alt = $this->{self::getTranslate('image_alt')};
         $this->image_title = $this->{self::getTranslate('image_title')};
         $this->meta_keywords = $this->{self::getTranslate('meta_keywords')};
         $this->meta_description = $this->{self::getTranslate('meta_description')};
         $this->article_title = $this->{self::getTranslate('article_title')};
         $this->article_description = $this->{self::getTranslate('article_description')};
+        $this->page_description = $this->{self::getTranslate('page_description')};
         $this->file_price = $this->{self::getTranslate('file_price')};
         $this->image_price = $this->{self::getTranslate('image_price')};
         $this->file_catalog = $this->{self::getTranslate('file_catalog')};

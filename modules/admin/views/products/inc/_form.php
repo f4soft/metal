@@ -15,6 +15,8 @@ use yii\widgets\ActiveForm;
     <?php $preset_100 = $model->isNewRecord ? false : $preset_100; ?>
 
     <?= $form->field($model, 'popular')->checkbox()?>
+    
+    <?= $form->field($model, 'recommend')->checkbox()?>
 
     <?= $form->field($model, 'sku')->textInput(['maxlength' => true]) ?>
 
@@ -36,6 +38,8 @@ use yii\widgets\ActiveForm;
     ?>
 
     <?= $form->field($model, 'status')->checkbox() ?>
+    
+    <?= $form->field($model, 'alias')->textInput(['value' => app\models\Products::getUrl($model, ""), 'disabled' => true])->label(Yii::t('app', 'Путь (alias)'));?>
 
     <?php
     $items = [

@@ -73,7 +73,7 @@ class Offices extends BaseModel
             'phone' => Yii::t('app/admin', 'Телефоны'),
             'how_we_works_ru' => Yii::t('app/admin', 'Режим работы'),
             'how_we_works_ua' => Yii::t('app/admin', 'Режим работы'),
-            'how_we_works_en' => Yii::t('app/admin', 'Режим работы'),
+            'how_we_works_en' => Yii::t('app/admin', 'Режим работы'),          
             'status' => Yii::t('app/admin', 'Статус'),
             'updated_at' => Yii::t('app/admin', 'Дата обновления'),
             'created_at' => Yii::t('app/admin', 'Дата создания'),

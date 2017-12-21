@@ -3,8 +3,7 @@ namespace app\controllers;
 
 use app\components\AppController;
 use app\models\CartProducts;
-use app\models\Forms\SignupFizForm;
-use app\models\Forms\SignupYurForm;
+use app\models\Forms\SignupForm;
 use app\models\Forms\LoginForm;
 use app\models\Order;
 use app\models\NewsToken;
@@ -48,7 +47,7 @@ class CheckoutController extends AppController
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
         $post = Yii::$app->request->post();
-
+ 
         if ($post['user'] == 'old') { // old user - need validate and log in
             $model = new LoginForm();
             if ($model->load($post, '')) {//form validation and user login
@@ -59,12 +58,7 @@ class CheckoutController extends AppController
             }
         }
         if ($post['user'] == 'new') { // new user
-            if ($post['type'] == 'fiz') { // fizliso
-                $model = new SignupFizForm();
-            }
-            if ($post['type'] == 'yur') { // yurliso
-                $model = new SignupYurForm();
-            }
+            $model = new SignupForm();
             if ($model->load($post, '')) {
                 if ($user = $model->signup()) { //form validation and user login
                     Yii::$app->getUser()->login($user, 3600 * 24 * 30);
@@ -74,7 +68,7 @@ class CheckoutController extends AppController
                         $this->renderPartial('@app/views/emails/confirm_login',
                             [
                                 'model' => $model,
-                                'message_action_type' => Yii::t('app', 'Регистрация на сайте')
+                                'message_action_type' => Yii::t('app', 'Спасибо за регистрацию на сайте')
                             ]
                         ));
                 } else { //form not valid
