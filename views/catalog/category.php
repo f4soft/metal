@@ -28,7 +28,11 @@ $this->params['breadcrumbs'][] = ['label' => $title, 'template' => "<li class='b
             <img src="/img/katalog_krug.png" alt="" title="" class="page-icon">
             <?php endif;?>
             <h1 class="h1 page-title"><?= $title?></h1>
-            <h5 class="h5 page-sub-title"><span><i class="i-holder prev"></i><?= Yii::t('app', 'Самый большой выбор металлопроката')?><i class="i-holder next"></i></span></h5>
+            <?php if($category->page_description):?>
+                <div class="page-sub-description"><span><?= $category->page_description ?></span></div>
+            <?php else:?>
+                <h5 class="h5 page-sub-title"><span><i class="i-holder prev"></i><?= Yii::t('app', 'Самый большой выбор металлопроката')?><i class="i-holder next"></i></span></h5>
+            <?php endif;?>
         </div>
     </div>
 </div>
@@ -91,21 +95,31 @@ $this->params['breadcrumbs'][] = ['label' => $title, 'template' => "<li class='b
     </div>
 <?php endif;?>
 
-<?php if($category->article_description && $category->article_title):?>
-<div class="container seo-text-block">
-    <div class="seo-content">
-        <h2 class="h2"><?= $category->article_title?></h2>
-
-        <div class="text">
-            <?= $category->article_description?>
-            <?php if($city->cat_description):?>
-                <p><?= $city->cat_description ?></p>
-            <?php endif;?>
+<?php if($selectedCity == ''):?>
+    <?php if($category->article_description && $category->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $category->article_title?></h2>
+                <div class="text">
+                    <?= $category->article_description?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
+            </div>
         </div>
-        <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
-
-    </div>
-</div>
+    <?php endif;?>
+<?php else:?>
+    <?php if($seoTags && $seoTags->article_description && $seoTags->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $seoTags->article_title?></h2>
+                <div class="text">                
+                    <?= $seoTags->article_description ?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
+            </div>
+        </div>
+    <?php endif;?>
 <?php endif;?>
+
 <?= $this->render('@app/views/layouts/inc/contact', ['model' => $modelContact])?>
 <?= $this->render('@app/views/layouts/inc/popup_contact')?>

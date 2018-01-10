@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'template' => "<li cl
                 \yii\helpers\Url::to(["/$city/presscenter/news/{$news['first']->alias}"])
             );?>
             <?= Html::a(\yii\helpers\StringHelper::truncate($news['first']->title, 50), \yii\helpers\Url::to(["/presscenter/news/{$news['first']->alias}"]), ['class' => 'preview-title']);?>
-            <span class="preview-date"><?= Yii::$app->formatter->asDate($news['first']->created_at)?></span>
+            <span class="preview-date"><?= Yii::$app->formatter->asDate($news['first']->date_show)?></span>
             <p class="preview-text">
                 <?= \yii\helpers\StringHelper::truncate(strip_tags($news['first']->description), 200);?>
                 <?= Html::a(Yii::t('app', 'Подробнее') . '<i class="i-holder read-more-i"></i>', \yii\helpers\Url::to(["/presscenter/news/{$news['first']->alias}"]), ['class' => 'read-more']);?>
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'template' => "<li cl
                     <?= Html::a(Html::img('/'.$item->getImageUrl(Yii::$app->params['imagePresets']['news']['small'],
                         \app\models\News::tableName()), ['alt' => $item->image_alt, 'title' => $item->image_title, 'class' => 'news-preview-img']), \yii\helpers\Url::to(["/$city/presscenter/news/{$item->alias}"])); ?>
                     <?= Html::a(\yii\helpers\StringHelper::truncate($item->title, 50), \yii\helpers\Url::to(["/$city/presscenter/news/{$item->alias}"]), ['class' => 'preview-title']);?>
-                    <span class="preview-date"><?= Yii::$app->formatter->asDate($item->created_at)?></span>
+                    <span class="preview-date"><?= Yii::$app->formatter->asDate($item->date_show)?></span>
                     <p class="preview-text"><?= \yii\helpers\StringHelper::truncate(strip_tags($item->description), 100);?></p>
                 </div>
             <?php endforeach;?>
@@ -89,7 +89,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'template' => "<li cl
                             <h3 class="h3"><?= \yii\helpers\StringHelper::truncate($article->title, 50);?></h3>
                             <?= Html::a(Html::img('/'.$article->getImageUrl(Yii::$app->params['imagePresets']['articles']['smallArticle'],
                                 \app\models\Articles::tableName()), ['alt' => $article->image_alt, 'title' => $article->image_title]), \yii\helpers\Url::to(["/$city/presscenter/articles/{$article->alias}"]))?>
-                            <span class="preview-date"><?= Yii::$app->formatter->asDate($article->created_at)?></span>
+                            <span class="preview-date"><?= Yii::$app->formatter->asDate($article->date_show)?></span>
                             <p class="preview-text">
                                 <?= \yii\helpers\StringHelper::truncate(strip_tags($article->description), 350);?>
                                 <a href="<?= \yii\helpers\Url::to(["/$city/presscenter/articles/{$article->alias}"])?>" class="read-more"><?= Yii::t('app', 'Подробнее')?><i class="i-holder read-more-i"></i></a>

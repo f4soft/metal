@@ -11,7 +11,7 @@ use app\models\ProductsCategories;
 use app\models\Sales;
 use app\models\Services;
 use app\models\PagesImages;
-use app\models\Offices;
+use app\models\SeoTags;
 use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
 use Yii;
@@ -66,11 +66,12 @@ class CatalogController extends AppController
             'files' => $files,
             'head_img' => $head_img,
             'city' => Cities::getByAliasOrKiev($this->selectedCity), 
+            'seoTags' => SeoTags::findOne(['url' => Yii::$app->request->url]),
         ]);
     }
 
     public function actionSubcategory($category = "", $subcategory = "")
-    {        
+    {    
         $category = ProductsCategories::findOne(['alias' => $category]);
         if (!$category) {
             throw new NotFoundHttpException();
@@ -139,6 +140,7 @@ class CatalogController extends AppController
             'files'=>$files,
             'head_img' => $head_img,
             'rowShow' => $rowShow,
+            'seoTags' => SeoTags::findOne(['url' => Yii::$app->request->url]),
         ]);
     }
 }

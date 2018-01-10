@@ -33,8 +33,9 @@ class SeoTags extends BaseModel
     public function rules()
     {
         return [
-            [['url', 'title', 'description'], 'string', 'max' => 255],
+            [['url', 'title', 'description', 'article_title'], 'string', 'max' => 255],
             ['url', 'unique'],
+            ['article_description', 'string']
         ];
     }
 
@@ -48,6 +49,8 @@ class SeoTags extends BaseModel
             'url' => 'Url',
             'title' => 'Meta title',
             'description' => 'Meta description',
+            'article_title' => 'Seo title',
+            'article_description' => 'Seo description',
         ];
     }
 

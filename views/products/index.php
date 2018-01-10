@@ -208,21 +208,35 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
     </div>
 <?php endif;?>
 
-<?php if($product->article_description && $product->article_title):?>
-    <div class="container seo-text-block">
-        <div class="seo-content">
-            <h2 class="h2"><?= $product->article_title?></h2>
+<?php if($selectedCity == ''):?>
+    <?php if($product->article_description && $product->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $product->article_title?></h2>
 
-            <div class="text">
-                <?= $product->article_description?>
-                <?php if($city->product_description):?>
-                    <p><?= $city->product_description ?></p>
-                <?php endif;?>
+                <div class="text">
+                    <?= $product->article_description?>
+                    <?php if($city->product_description):?>
+                        <p><?= $city->product_description ?></p>
+                    <?php endif;?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
+
             </div>
-            <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
-
         </div>
-    </div>
+    <?php endif;?>
+<?php else:?>
+    <?php if($seoTags && $seoTags->article_description && $seoTags->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $seoTags->article_title?></h2>
+                <div class="text">                
+                    <?= $seoTags->article_description ?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
+            </div>
+        </div>
+    <?php endif;?>
 <?php endif;?>
 
 <?= $this->render('@app/views/layouts/inc/contact', ['model' => $modelContact])?>

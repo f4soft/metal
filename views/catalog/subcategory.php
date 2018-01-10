@@ -40,19 +40,19 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
 <?php if ($category->id !=91 ): /*if this not kovka*/?>
 
     <div class="container page-name-block margin-top-0 margin-bottom-0">
-        <span class="h2"><?= $subcategory->title ?></span>
-        <!--<h2 class="table-sub-title"><= Yii::t('app', 'Цены') . ' ' . $subcategory->title ?></h2>-->
+        <!--<span class="h2"><= $subcategory->title ?></span>-->
+        <h2 class="table-sub-title"><?= $subcategory->title_price ?></h2>
     </div>    
 
     <div class="container product-list-by-category margin-top-0">        
         
-        <?php \yii\bootstrap\ActiveForm::begin(); ?>
-        <?= \kartik\helpers\Html::dropDownList('category', $subcategory->id,
+        <!--<php \yii\bootstrap\ActiveForm::begin(); ?>
+        <= \kartik\helpers\Html::dropDownList('category', $subcategory->id,
             \yii\helpers\ArrayHelper::map($allSubcategories, 'id', 'title'), ['class' => 'select-category select',
                 'onchange' => 'this.form.submit()']); ?>
-        <?php \yii\bootstrap\ActiveForm::end(); ?>     
+        <php \yii\bootstrap\ActiveForm::end(); ?>-->     
        
-        <table class="table table-calc /*margin-top-0*/">
+        <table class="table table-calc margin-top-0">
             <tbody>
             <tr>
                 <th><?= Yii::t('app', 'Наименование товара') ?></th>
@@ -190,21 +190,30 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
     </div>
 <?php endif;?>
 
-<?php if($subcategory->article_description && $subcategory->article_title):?>
-    <div class="container seo-text-block">
-        <div class="seo-content">
-            <h2 class="h2"><?= $subcategory->article_title?></h2>
-
-            <div class="text">
-                <?= $subcategory->article_description ?>
-                <?php if($city->sub_cat_description):?>
-                    <p><?= $city->sub_cat_description ?></p>
-                <?php endif;?>
+<?php if($selectedCity == ''):?>
+    <?php if($subcategory->article_description && $subcategory->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $subcategory->article_title?></h2>
+                <div class="text">                
+                    <?= $subcategory->article_description ?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
             </div>
-            <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
-
         </div>
-    </div>
+    <?php endif;?>
+<?php else :?>
+    <?php if($seoTags && $seoTags->article_description && $seoTags->article_title):?>
+        <div class="container seo-text-block">
+            <div class="seo-content">
+                <h2 class="h2"><?= $seoTags->article_title?></h2>
+                <div class="text">                
+                    <?= $seoTags->article_description ?>
+                </div>
+                <a href="" class="show-more"><?= Yii::t('app', 'Читать подробнее')?></a>
+            </div>
+        </div>
+    <?php endif;?>
 <?php endif;?>
 
 <?php $this->registerJsFile("@web/js/show_row.js",['depends' => [\yii\web\JqueryAsset::className()]]); ?>

@@ -124,9 +124,15 @@ class SeoTagsUtility
         
         $url_individual = "/{$lang}/[city]/$view/{$category->alias}";
         
-        if($category->meta_keywords && $category->meta_description && $view == "catalog"){
+        if($city == 'kiev' && $category->meta_keywords && $category->meta_description && $view == "catalog"){
             $meta_data['title'] = $category->meta_keywords;
             $meta_data['description'] = $category->meta_description;
+        } else {
+            $tags = SeoTags::getMetaTags(Yii::$app->request->url);
+            if($tags){
+                $meta_data['title'] = $tags->title;
+                $meta_data['description'] = $tags->description;
+            }            
         }
         
         if(!$meta_data){
@@ -156,15 +162,21 @@ class SeoTagsUtility
         $request_get = Yii::$app->request->get();
         $lang = Yii::$app->params['langs'][Yii::$app->language];
         $city = Yii::$app->request->get('city') ? Yii::$app->request->get('city') : 'kiev';
-        
+      
         $meta_data = [];
         
         $url_template = "/{$lang}/[city]/$view/[category]/[subcategory]";
-        $url_individual = "/{$lang}/[city]/$view/{$request_get['category']}/{$request_get['subcategory']}";      
-        
-        if($subcategory->meta_keywords && $subcategory->meta_description && $view == "catalog"){
+        $url_individual = "/{$lang}/[city]/$view/{$request_get['category']}/{$request_get['subcategory']}";
+                
+        if($city == 'kiev' && $subcategory->meta_keywords && $subcategory->meta_description && $view == "catalog"){
             $meta_data['title'] = $subcategory->meta_keywords;
             $meta_data['description'] = $subcategory->meta_description;
+        } else {
+            $tags = SeoTags::getMetaTags(Yii::$app->request->url);
+            if($tags){
+                $meta_data['title'] = $tags->title;
+                $meta_data['description'] = $tags->description;
+            }            
         }
         
         if(!$meta_data){
@@ -205,15 +217,21 @@ class SeoTagsUtility
         $request_get = Yii::$app->request->get();
         $lang = Yii::$app->params['langs'][Yii::$app->language];
         $city = Yii::$app->request->get('city') ? Yii::$app->request->get('city') : 'kiev';
-        
+       
         $meta_data = [];
         
         $url_template = "/{$lang}/[city]/catalog/[category]/[subcategory]/[product]";
         $url_individual = "/{$lang}/[city]/catalog/{$request_get['category']}/{$request_get['subcategory']}/{$request_get['alias']}";
         
-        if($product->meta_keywords && $product->meta_description){
+        if($city == 'kiev' && $product->meta_keywords && $product->meta_description){
             $meta_data['title'] = $product->meta_keywords;
             $meta_data['description'] = $product->meta_description;
+        } else {
+            $tags = SeoTags::getMetaTags(Yii::$app->request->url);
+            if($tags){
+                $meta_data['title'] = $tags->title;
+                $meta_data['description'] = $tags->description;
+            } 
         }
         
         if(!$meta_data){

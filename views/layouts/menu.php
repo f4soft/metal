@@ -22,7 +22,7 @@ array_unshift($catItems,
                 'active' => Yii::$app->controller->action->id == 'catalog',
                     'url' => ["/{$currentСity}/catalog"],
                 ]);
-//$catItems[] = ['label' => Yii::t('app', 'Спецпредложения'), 'url' => ["/{$currentСity}/sales"], 'active' => Yii::$app->controller->id == 'services']
+//$catItems[] = ['label' => Yii::t('app', 'Спецпредложения'), 'url' => ["/{$currentСity}/sales"], 'active' => Yii::$app->controller->id == 'services']                  
 ?>
 <?php NavBar::begin(
     [

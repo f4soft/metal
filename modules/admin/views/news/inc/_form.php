@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\News */
@@ -25,6 +26,8 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'status')->checkbox() ?>
+    
+    <?= $form->field($model, 'date_show')->widget(\yii\jui\DatePicker::className(), ['dateFormat' => 'yyyy-MM-dd']) ?>
 
     <?php
     $items = [

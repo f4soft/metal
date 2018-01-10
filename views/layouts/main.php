@@ -22,7 +22,7 @@ foreach ($cities as $city) {
         if (strpos($url, '//') !== false) {
             $url = str_replace('//', '/', $url);
         }
-        $canonical = true;
+        $canonical = false;
         $url = Yii::$app->request->hostInfo.$url;
         break;
     }
@@ -75,8 +75,8 @@ if (SeoTagsUtility::$active) {
     <link rel="alternate" hreflang="<?= $altLink['lang']?>" href="<?= $altLink['link']?>"/>
     <?php endforeach; ?>
     <?php endif; ?>
-    <?php if (!empty($canonical)): ?>
-    <link rel="canonical" href="<?= $url?>">
+    <?php if (!empty($url)): ?>
+    <link <?= !empty($canonical) ? 'rel="canonical"' : ''; ?>  href="<?= $url?>">
     <?php endif;?>
     <?php $this->head() ?>
     <!-- Google Tag Manager -->

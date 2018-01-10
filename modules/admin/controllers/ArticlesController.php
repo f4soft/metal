@@ -57,6 +57,7 @@ class ArticlesController extends AppController
                 ]);
             }
         } else {
+            $model->date_show = date('Y-m-d');
             return $this->render('create', [
                 'model' => $model,
             ]);

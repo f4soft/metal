@@ -29,6 +29,7 @@ use Yii;
  * @property string $meta_description_en
  * @property string $alias
  * @property integer $status
+  * @property date $date_show
  * @property integer $updated_at
  * @property integer $created_at
  */
@@ -57,6 +58,7 @@ class Articles extends BaseModel
             [['image'], 'file', 'extensions' => 'png, jpg', 'maxSize' => Yii::$app->params['maxSize']],
             [['description_ru', 'description_ua', 'description_en'], 'string'],
             [['status', 'updated_at', 'created_at'], 'integer'],
+            [['date_show'], 'date', 'format' => 'php:Y-m-d'],
             [['title_ru', 'title_ua', 'title_en', 'image_alt_ru', 'image_alt_ua', 'image_alt_en', 'image_title_ru', 'image_title_ua', 'image_title_en', 'meta_keywords_ru', 'meta_keywords_ua', 'meta_keywords_en', 'meta_description_ru', 'meta_description_ua', 'meta_description_en', 'alias'], 'string', 'max' => 255],
         ];
     }
@@ -92,6 +94,7 @@ class Articles extends BaseModel
 
             'alias' => Yii::t('app/admin', 'Url'),
             'status' => Yii::t('app/admin', 'Статус'),
+            'date_show' => Yii::t('app/admin', 'Дата (что отображается для пользователя)'),
             'updated_at' => Yii::t('app/admin', 'Updated At'),
             'created_at' => Yii::t('app/admin', 'Created At'),
         ];

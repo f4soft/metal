@@ -32,16 +32,19 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
 
 
     <div class="container page-name-block margin-top-0 margin-bottom-0">
-        <span class="h2"><?= $subcategory->title ?></span>
+        <!--<span class="h2"><= $subcategory->title ?></span>-->
+        <h2 class="table-sub-title"><?= $subcategory->title_price ?></h2>
     </div>
 
     <div class="container product-list-by-category margin-top-0">
-        <?php \yii\bootstrap\ActiveForm::begin(); ?>
-        <?= \kartik\helpers\Html::dropDownList('category', $subcategory->id,
+        
+        <!--<php \yii\bootstrap\ActiveForm::begin(); ?>
+        <= \kartik\helpers\Html::dropDownList('category', $subcategory->id,
             \yii\helpers\ArrayHelper::map($allSubcategorySale, 'id', 'title'), ['class' => 'select-category select',
                 'onchange' => 'this.form.submit()']); ?>
-        <?php \yii\bootstrap\ActiveForm::end(); ?>
-        <table class="table table-calc">
+        <php \yii\bootstrap\ActiveForm::end(); ?>-->
+        
+        <table class="table table-calc margin-top-0">
             <tbody>
             <tr>
                 <th><?= Yii::t('app', 'Наименование товара') ?></th>

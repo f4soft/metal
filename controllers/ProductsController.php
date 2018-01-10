@@ -16,7 +16,9 @@ use app\models\Forms\ContactForm;
 use app\models\Products;
 use app\models\ProductsCategories;
 use app\models\Sales;
+use app\models\SeoTags;
 use yii\web\NotFoundHttpException;
+use Yii;
 
 class ProductsController extends AppController
 {
@@ -44,6 +46,7 @@ class ProductsController extends AppController
             'subcategory' => $product->productCategory,
             'city' => Cities::getByAliasOrKiev($this->selectedCity),
             'relatedCategories' => $relatedCategories,
+            'seoTags' => SeoTags::findOne(['url' => Yii::$app->request->url]),
         ]);
     }
 }
