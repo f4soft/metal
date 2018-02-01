@@ -2,6 +2,7 @@
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use app\models\ProductsCategories;
+use app\models\Services;
 
 $categories = ProductsCategories::getCategoriesRoots();
 $catItems = array();
@@ -22,6 +23,17 @@ array_unshift($catItems,
                 'active' => Yii::$app->controller->action->id == 'catalog',
                     'url' => ["/{$currentСity}/catalog"],
                 ]);
+                    
+$services = Services::findAll(['status' => 1]);
+$serviceItems = array();
+foreach($services as $service){
+    $item = [
+        'label' => strip_tags($service->title),
+        'url' => \yii\helpers\Url::to(["/{$currentСity}/services/" . $service->alias])
+    ];
+    $serviceItems[] = $item;
+}
+               
 //$catItems[] = ['label' => Yii::t('app', 'Спецпредложения'), 'url' => ["/{$currentСity}/sales"], 'active' => Yii::$app->controller->id == 'services']                  
 ?>
 <?php NavBar::begin(
@@ -54,7 +66,13 @@ array_unshift($catItems,
             'linkOptions' => ['class' => 'dropdown-toggle disabled'],
             'items' => $catItems
         ],
-        ['label' => Yii::t('app', 'Услуги'), 'url' => ["/{$currentСity}/services"], 'active' => Yii::$app->controller->id == 'services'],
+        [
+            'label' => Yii::t('app', 'Услуги'), 
+            'active' =>Yii::$app->controller->id == 'services',
+            'url' => false, 
+            'linkOptions' => ['class' => 'dropdown-toggle disabled'],
+            'items' => $serviceItems,            
+        ],
         [
             'label' => Yii::t('app', 'Пресс-центр'), 'url' => ["/{$currentСity}/presscenter"],
             'active' => (Yii::$app->controller->id == 'presscenter'),

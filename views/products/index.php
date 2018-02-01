@@ -37,14 +37,22 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
 
 <?= $this->render('@app/views/layouts/inc/breadcrumbs'); ?>
 
+
+
 <div class="container page-name-block margin-top-0 margin-bottom-0">
-    <span class="h2"><?= $product->title?></span>
+    <div class="col-lg-9 col-md-9">
+        <span class="h2"><?= $product->title?></span>
+    </div>
+    <div class="col-lg-3 col-md-3 padding-left-0 padding-right-0">
+        <?= Html::submitButton(Yii::t('app', 'Оформить заказ').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart'])?>
+    </div>
 </div>
 
 <div class="container product-card-block margin-top-0 margin-bottom-0">
+    
     <div class="col-lg-9 col-md-9 product-description-block">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4  prod-image">
+            <div class="col-lg-4 col-md-4 col-sm-4 prod-image">
                 <?php if ($parent->alias != 'kovanye-izdelia'): ?>
                     <?php $image =  $category->getImageUrl(Yii::$app->params['imagePresets']['categories']['product'], \app\models\ProductsCategories::tableName(), 'image'); ?>
                 <?php else: ?>
@@ -114,15 +122,14 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
                     <?= Html::input('hidden', 'CartProducts[weight]', 0)?>
                     <?= Html::input('hidden', 'CartProducts[product_id]', $product->id);?>
                     <?= Html::input('hidden', 'CartProducts[unit]', $product->unit);?>
-                    <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price);?>
-                    <?= Html::submitButton(Yii::t('app', 'Оформить заказ').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart'])?>
+                    <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price);?>                    
                 <?= Html::endForm();?>
             </div> 
             
         </div>
     </div>
     <div class="col-lg-3 col-md-3 vertical-services-block">
-        <div class="row">
+        <div class="row">                                    
             <span class="h3"><?= Yii::t('app', 'Дополнительные услуги')?></span>
             <div class="service-item item1">
                 <span class="icon"><i class="i-holder"></i></span>
@@ -141,9 +148,12 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
                 <span class="text"><span class="inner-text"><?= Yii::t('app', 'Комплектация<br>и упаковка')?></span></span>
             </div>
         </div>
+        </div>
     </div>
+    
+    
+    
 </div>
-
 <?php if($relatedCategories): ?>
 <div class="container-fluid related-products-block">
     <div class="container">

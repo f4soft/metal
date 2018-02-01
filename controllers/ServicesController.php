@@ -26,4 +26,28 @@ class ServicesController extends AppController
             'head_img' => $head_img,
         ]);
     }
+    
+    public function actionView($id)
+    {
+        $modelService = new Services();
+        $modelContact = new ContactForm();
+                        
+        $service = $modelService->findOne(['alias' => $id]);       
+        if(!$service){
+            throw new NotFoundHttpException();
+        }
+        
+        $block_settings = BlockSettings::find()->one();
+        $head_img = PagesImages::find()->where(['slug' => 'services'])->one();
+        
+        return $this->render('view', [
+            'service' => $service,
+            'selectedCity' => $this->selectedCity,
+            'head_img' => $head_img,
+            'block_settings' => $block_settings,
+            'modelContact' => $modelContact,
+        ]);
+    }
+    
+    
 }

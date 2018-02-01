@@ -23,6 +23,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $small_image_title_ru
  * @property string $small_image_title_ua
  * @property string $small_image_title_en
+ * @property string $alias
  * @property integer $status
  * @property integer $updated_at
  * @property integer $created_at
@@ -44,6 +45,12 @@ class Services extends BaseModel
     public function behaviors()
     {
         return [
+//            'slug' => [
+//                'class' => SluggableBehavior::className(),
+//                'in_attribute' => 'title_ru',
+//                'out_attribute' => 'alias',
+//                'translit' => true,
+//            ],
             TimestampBehavior::className(),
         ];
     }
@@ -56,8 +63,9 @@ class Services extends BaseModel
         return [
             [['small_image', 'big_image'], 'file', 'extensions' => 'png, jpg', 'maxSize' => Yii::$app->params['maxSize']],
             [['description_ru', 'description_ua', 'description_en'], 'string'],
+            [['alias'], 'required'],
             [['status', 'updated_at', 'created_at'], 'integer'],
-            [['title_ru', 'title_ua', 'title_en', 'small_image_alt_ru', 'small_image_alt_ua', 'small_image_alt_en', 'small_image_title_ru', 'small_image_title_ua', 'small_image_title_en'], 'string', 'max' => 255],
+            [['title_ru', 'title_ua', 'title_en', 'small_image_alt_ru', 'small_image_alt_ua', 'small_image_alt_en', 'small_image_title_ru', 'small_image_title_ua', 'small_image_title_en', 'alias'], 'string', 'max' => 255],
         ];
     }
 
@@ -85,8 +93,8 @@ class Services extends BaseModel
             'small_image_title_ru' => Yii::t('app/admin', 'Заголовок для иконки услуги'),
             'small_image_title_ua' => Yii::t('app/admin', 'Заголовок для иконки услуги'),
             'small_image_title_en' => Yii::t('app/admin', 'Заголовок для иконки услуги'),
-
-            'status' => Yii::t('app/admin', 'Статус'),
+            'alias' => Yii::t('app/admin', 'Урл Страницы'),
+            'status' => Yii::t('app/admin', 'Статус'),            
             'updated_at' => Yii::t('app/admin', 'Дата обновления'),
             'created_at' => Yii::t('app/admin', 'Дата создания'),
         ];

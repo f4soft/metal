@@ -141,8 +141,13 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
             <?= \kartik\helpers\Html::dropDownList('show-row', '', $rowShow, ['class' => 'select-show-row select', 'onchange' => 'reshowRow(this)'] );?>
             <?php \yii\bootstrap\ActiveForm::end()?>
         </div>
+                        
+        <span class="arrow-page-up glyphicon glyphicon-arrow-up"></span>        
         
-        <span class="arrow-page-up glyphicon glyphicon-arrow-up"></span>
+        <div class="col-xs-12 col-lg-12 padding-right-0 padding-left-0">
+        <?= $this->render('@app/views/layouts/inc/contact_under_table', ['model' => $modelContact])?>
+        </div>    
+        <?= $this->render('@app/views/layouts/inc/popup_contact')?>
         
     </div>
 <?php else: ?>
@@ -150,6 +155,7 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
         'category'=> $category, 'products'=>$products, 'city'=>$city])
     ; ?>
 <?php endif;?>
+
 <div class="container double-download-block">
     <?php if ($files['fileCatalog'] && $files['fileImage']) : ?>
         <div class="col-lg-6 img-holder">
@@ -217,6 +223,3 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
 <?php endif;?>
 
 <?php $this->registerJsFile("@web/js/show_row.js",['depends' => [\yii\web\JqueryAsset::className()]]); ?>
-
-<?= $this->render('@app/views/layouts/inc/contact', ['model' => $modelContact])?>
-<?= $this->render('@app/views/layouts/inc/popup_contact')?>

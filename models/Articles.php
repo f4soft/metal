@@ -114,6 +114,6 @@ class Articles extends BaseModel
 
     static public function getArticlesForPressCenter()
     {
-        return self::find()->getActive()->orderBy('created_at DESC')->limit(2)->all();
+        return self::find()->getActive()->orderBy('date_show DESC')->limit(2)->all();
     }
 }

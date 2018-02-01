@@ -85,7 +85,7 @@ class SiteController extends AppController
 //        if ($identity = Yii::$app->user->identity) {
 //            $modelSubscribe->email = $identity->email;
 //        }
-        $news = News::find()->getActive()->orderBy('created_at DESC')->limit(3)->all();
+        $news = News::find()->getActive()->orderBy('date_show DESC')->limit(3)->all();
         return $this->render('index',
             [
                 'modelSubscribe' => $modelSubscribe,

@@ -21,7 +21,7 @@ class NewsController extends AppController
         $sales = Sales::getSales();
         $model = new NewsSubscribeForm();
         $news = new ActiveDataProvider([
-           'query' => News::find()->getActive()->orderBy('id DESC'),
+           'query' => News::find()->getActive()->orderBy('date_show DESC'),
             'pagination' => [
                 'pageSize' => 6
             ]

@@ -25,7 +25,7 @@ class NewsController extends AppController
     {
         $searchModel = new NewsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->setSort(['defaultOrder' => ['id' => SORT_DESC]]);
+        $dataProvider->setSort(['defaultOrder' => ['date_show' => SORT_DESC]]);
         $dataProvider->setPagination(['pageSize' => 15]);
 
         return $this->render('index', [

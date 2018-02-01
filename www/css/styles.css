@@ -1412,6 +1412,41 @@ h2.stripped-title span, span.stripped-title span {
     color: #fff;
     text-transform: uppercase;
 }
+.table-footer-block {
+    margin-top: 60px;
+    background: url(../img/feedback-bg.jpg) no-repeat;
+    padding-bottom: 30px;
+    background-size: cover;
+}
+.table-footer-block .h3 {
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.table-footer-block .form-control {
+    border-radius: 0;
+    height: 40px;
+    padding: 0 0 0 20px;
+    margin: 0;
+    border: none;
+    font-size: 18px;
+    color: #999999;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+.table-footer-block .sumbit {
+    width: 100%;
+    border-radius: 0;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    color: #fff;
+    text-transform: uppercase;
+}
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #999;
@@ -2856,7 +2891,8 @@ body .radio-custom:focus + .radio-custom-label {
     background-size: 20px 100%;
 }
 .product-list-by-category .table .add-to-cart span,
-.table-description .add-to-cart span{
+.table-description .add-to-cart span,
+.vertical-services-block .add-to-cart span{
     font-size: 11px;
     text-transform: uppercase;
     background-color: #F08080;
@@ -3012,6 +3048,23 @@ body .radio-custom:focus + .radio-custom-label {
     padding: 0 70px;
     float: right;
     border: none;
+}
+.page-name-block .add-to-cart{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #283891;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    padding: 2px 20px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 36px;
 }
 .product-card-block .vertical-services-block {
     border: 1px solid #969696;
@@ -3273,6 +3326,9 @@ body > .container-fluid {
 }
 .padding-right-0 {
     padding-right: 0 !important;
+}
+.padding-left-0 {
+    padding-left: 0 !important;
 }
 .news-preview-block {
     padding-top: 60px;

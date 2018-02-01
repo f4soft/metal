@@ -25,7 +25,7 @@ class ArticlesController extends AppController
     {
         $searchModel = new ArticlesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->setSort(['defaultOrder' => ['created_at' => SORT_DESC]]);
+        $dataProvider->setSort(['defaultOrder' => ['date_show' => SORT_DESC]]);
         $dataProvider->setPagination(['pageSize' => 15]);
 
         return $this->render('index', [

@@ -48,22 +48,22 @@ return [
         [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<controller:(sales)>/<category>/<subcategory>',
             'route' => 'sales/subcategory',
-        ],
-        
+        ],     
+       
         '<module:(admin)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
         '<module:(admin)>/<controller:\w+>' => '<module>/<controller>',
         '<controller:(search|about|catalog|sales|services|site|subscribe|vacancies|checkout|dealers)>' => '<controller>/index',
         
         '<controller:(vacancies|subscribe|site|catalog|checkout|dealers|sales)>/<action:\w+>' => '<controller>/<action>',
-        '<controller:(sales)>/<id:(.*)>' => '<controller>/view',
+        '<controller:(sales|services)>/<id:(.*)>' => '<controller>/view',
         [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<controller:(search|about|sales|services|subscribe|vacancies|catalog|checkout|dealers)>',
             'route' => '<controller>/index',
         ],
         [
-            'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<controller:(sales)>/<id:(.*)>',
+            'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<controller:(sales|services)>/<id:(.*)>',
             'route' => '<controller>/view',
-        ],
+        ],        
 
         '<controller:\w+>/<id:\d+>/<action:\w+>' => '<controller>/<action>',
         '<module:(presscenter|offices)>/<controller:\w+>/' => '<module>/<controller>/index',
@@ -71,23 +71,24 @@ return [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<module:\w+>',
             'route' => '<module>/default/index',
         ],
-        '<module:\w+>/<controller:\w+>' => '<module>',
-        //'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+              
+        //'<module:\w+>/<controller:\w+>' => '<module>',
+        //'<controller:\w+>/<action:\w+>' => '<controller>/<action>',               
         '<module:(admin|presscenter|offices)>' => '<module>',
         [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>',
             'route' => '',
-        ],
+        ],       
         '<controller:\w+>' => '<controller>/index',
         [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<module:\w+>/<controller:\w+>/<id:(.*)>',
             'route' => '<module>/<controller>/view',
-        ],
+        ],       
         '<module:(presscenter)>/<controller:\w+>/<id:(.*)>' => '<module>/<controller>/view',
         [
             'pattern' => '<city:(kiev|vinnitsa|dnepr|lvov|kharkov|odessa|khmelnytskyi|chernihiv|poltava)>/<module:\w+>/<controller:\w+>',
             'route' => '<module>/<controller>/index',
-        ],
+        ],       
         '<module:\w+>/<controller:\w+>/<id:([a-zA-Z1-9]*)>' => '<module>/<controller>/view',
         '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
         '<module:\w+>/<controller:\w+>/<id:(.*)>/<action:\w+>' => '<module>/<controller>/<action>',

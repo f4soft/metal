@@ -49,6 +49,7 @@ function makeUrl($url)
                     <li><a href="<?= $host  .Url::to(['/kharkov/offices#contacts']) ?>"><?= Yii::t('app', 'Харьков') ?></a></li>
                     <li><a href="<?= $host  .Url::to(['/khmelnytskyi/offices#contacts']) ?>"><?= Yii::t('app', 'Хмельницкий') ?></a></li>
                     <li><a href="<?= $host  .Url::to(['/chernihiv/offices#contacts']) ?>"><?= Yii::t('app', 'Чернигов') ?></a></li>
+                    <li><a href="<?= $host  .Url::to(['/poltava/offices#contacts']) ?>"><?= Yii::t('app', 'Полтава') ?></a></li>
                 </ul>
             </li>
             <li>

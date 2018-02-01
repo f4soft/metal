@@ -18,7 +18,7 @@ class ArticlesController extends AppController
     {
         $sales = Sales::getSales();
         $articles = new ActiveDataProvider([
-            'query' => Articles::find()->getActive()->orderBy('id DESC'),
+            'query' => Articles::find()->getActive()->orderBy('date_show DESC'),
             'pagination' => [
                 'pageSize' => 6
             ]

@@ -179,7 +179,7 @@ $ctParam = '';
                         , \yii\helpers\Url::to(["/$selectedCity/presscenter/news/{$item->alias}"]))?>
                     <?= \kartik\helpers\Html::a(\yii\helpers\StringHelper::truncate($item->title, 50), \yii\helpers\Url::to(["/$selectedCity/presscenter/news/{$item->alias}"]),
                         ['class' => 'preview-title'])?>
-                    <span class="preview-date"><?= Yii::$app->formatter->asDate($item->created_at)?></span>
+                    <span class="preview-date"><?= Yii::$app->formatter->asDate($item->date_show)?></span>
                     <p class="preview-text"><?= \yii\helpers\StringHelper::truncate(strip_tags($item->description), 80);?></p>
                 </div>
                 <?php endforeach;?>
@@ -200,7 +200,7 @@ $ctParam = '';
                             <h3 class="h3"><?= \yii\helpers\StringHelper::truncate($article->title, 50);?></h3>
                             <?= \kartik\helpers\Html::a(\kartik\helpers\Html::img('/'.$article->getImageUrl(Yii::$app->params['imagePresets']['articles']['smallArticle'],
                                     \app\models\Articles::tableName()), ['alt' => $article->image_alt, 'title' => $article->image_title]), \yii\helpers\Url::to(["/$selectedCity/presscenter/articles/{$article->alias}"]))?>
-                            <span class="preview-date"><?= Yii::$app->formatter->asDate($article->created_at)?></span>
+                            <span class="preview-date"><?= Yii::$app->formatter->asDate($article->date_show)?></span>
                             <p class="preview-text">
                                 <?= \yii\helpers\StringHelper::truncate(strip_tags($article->description), 350);?>
                                 <a href="<?= \yii\helpers\Url::to(["/$selectedCity/presscenter/articles/{$article->alias}"])?>" class="read-more"><?= Yii::t('app', 'Подробнее')?><i class="i-holder read-more-i"></i></a>

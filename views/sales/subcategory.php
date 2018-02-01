@@ -135,6 +135,11 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
         </div>
         
         <span class="arrow-page-up glyphicon glyphicon-arrow-up"></span>
+        
+        <div class="col-xs-12 col-lg-12 padding-right-0 padding-left-0">
+        <?= $this->render('@app/views/layouts/inc/contact_under_table', ['model' => $modelContact])?>
+        </div>    
+        <?= $this->render('@app/views/layouts/inc/popup_contact')?>
 
     </div>
 
@@ -177,7 +182,3 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
     </div>
 <php endif;?>
 -->
-
-<?= $this->render('@app/views/layouts/inc/contact', ['model' => $modelContact])?>
-<?= $this->render('@app/views/layouts/inc/popup_contact')?>
-

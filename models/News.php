@@ -118,7 +118,7 @@ class News extends BaseModel
 
     static public function getPressCenterNews()
     {
-        $news = self::find()->getActive()->orderBy('created_at DESC')->limit(4)->all();
+        $news = self::find()->getActive()->orderBy('date_show DESC')->limit(4)->all();
         return ['first' => array_shift($news), 'other' => $news];
     }
 
