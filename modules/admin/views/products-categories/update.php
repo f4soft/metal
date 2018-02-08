@@ -13,6 +13,14 @@ $this->params['breadcrumbs'][] = Yii::t('app/admin', 'Update');
 <div class="products-categories-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    
+     <?php if($model->parent_id > 1):/*показываем только для подкатегорий*/?>    
+        <div class="form-group">
+            <a href="<?= \yii\helpers\Url::to(["/admin/categories-link/index/", "category_id" => $model->id]) ?>" blank="__target">
+                <button class="btn btn-primary" type="button"><?= Yii::t('app/admin', 'Ссылки на подкатегории') ?></button>
+            </a>
+        </div>    
+    <?php endif;?>
 
     <?= $this->render('inc/_form', [
         'model' => $model,

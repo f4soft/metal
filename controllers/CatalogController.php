@@ -129,6 +129,7 @@ class CatalogController extends AppController
        
         return $this->render('subcategory', [
             'subcategory' => $subcategory,
+            'subcategoryLink' => $subcategory->categoriesLinkForShow,
             'category' => $category,
             'sales' => $sales,
             'modelContact' => $modelContact,

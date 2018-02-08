@@ -53,7 +53,7 @@ return [
         '<module:(admin)>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
         '<module:(admin)>/<controller:\w+>' => '<module>/<controller>',
         '<controller:(search|about|catalog|sales|services|site|subscribe|vacancies|checkout|dealers)>' => '<controller>/index',
-        
+                
         '<controller:(vacancies|subscribe|site|catalog|checkout|dealers|sales)>/<action:\w+>' => '<controller>/<action>',
         '<controller:(sales|services)>/<id:(.*)>' => '<controller>/view',
         [

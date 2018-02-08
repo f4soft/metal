@@ -21,7 +21,7 @@ class AppController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'root','is-main', 'import-cities', 'import-categories', 'import-products', 'upload', 'upload-products'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'root','is-main', 'import-cities', 'import-categories', 'import-products', 'upload', 'upload-products', 'get-sub-category'],
                         'roles' => ['admin'],
                     ],
                 ],

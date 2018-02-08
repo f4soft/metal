@@ -5516,3 +5516,35 @@ body,
     margin-top: 40px;
     margin-bottom: 30px;
 }
+
+.subcategory-link-block{
+    position: relative;
+    display: table;   
+    margin-top: 10px !important;
+}
+.subcategory-link-block .link-block{
+    position: relative;
+}
+.subcategory-link-block .line-block{
+    position: relative;
+}
+.subcategory-link-block .line-border{
+    width: 40%;
+    border-bottom: 1px solid #D9DADB; 
+    padding-bottom: 10px;
+}
+.subcategory-link-block a{
+    display: inline-table;
+    text-align: center;
+    width: 280px;
+    padding: 0px 5px;
+}
+
+/*@media (min-width: 1200px){
+    .subcategory-link-block a{
+        display: inline-table;
+        width: 22%;
+        padding-right: 2%;    
+        margin-bottom: 15px;
+    }    
+}*/

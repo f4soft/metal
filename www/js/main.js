@@ -10,6 +10,7 @@
     jQuery(function ($) {
         $(".callback-form #phone").mask("(999)999-99-99");
         $("#footer-feedback-form #contactform-phone").mask("(999)999-99-99");
+        $("#table-feedback-form #contactform-phone").mask("(999)999-99-99");
         $("#reg-form #phone").mask("(999)999-99-99");
         $(".resume-form [name*='phone']").mask("(999)999-99-99");
     });

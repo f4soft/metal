@@ -35,6 +35,21 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
     </div>
 </div>
 
+    <?php if($subcategoryLink):?>
+        <div class="container subcategory-link-block margin-bottom-0">
+            <div class="link-block">
+                <?php $linkNumBlock = 4; $linkCount = count($subcategoryLink);  ?>
+                <?php foreach($subcategoryLink as $link): $linkNumBlock-- ; $linkCount-- ;
+                    $linkCategory = $link->productCategory; ?>
+                    <?= Html::a($linkCategory->title, ['/catalog' . $linkCategory->getFullAlias()], ['target' => '_blank']); ?>
+                <?php endforeach;?>      
+            </div>
+            <div class="line-block">
+                <div class="line-border"></div>
+            </div>
+        </div>
+    <?php endif;?>
+
 <?= $this->render('@app/views/layouts/inc/breadcrumbs'); ?>
 
 <?php if ($category->id !=91 ): /*if this not kovka*/?>

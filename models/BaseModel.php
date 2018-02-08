@@ -111,13 +111,30 @@ class BaseModel extends ActiveRecord
     {
         return $this->hasMany(Products::className(), ['category_id' => 'id']);
     }
+    
     public function getProductsale()
     {
         return $this->hasMany(Products::className(), ['category_id' => 'id'])->andOnCondition(['stock' => 1]);
     }
+    
     public function getCityProducts()
     {
         return $this->hasMany(ProductsPricesToCities::className(), ['product_id' => 'id'])->andWhere(['city_id' => $this->city_id]);
+    }
+    
+    public function getCategoriesLink()
+    {
+        return $this->hasMany(CategoriesLink::className(), ['owner_category_id' => 'id']);
+    }
+    
+    public function getCategoriesLinkForShow()
+    {
+        return $this->hasMany(CategoriesLink::className(), ['owner_category_id' => 'id'])->andWhere(['status' => 1]);
+    }
+    
+    public function getOwnerCategory()
+    {
+        return $this->hasOne(ProductsCategories::className(), ["id" => "owner_category_id"]);
     }
 
     /**
