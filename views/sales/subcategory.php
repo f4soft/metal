@@ -57,7 +57,7 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
                 <th><?= Yii::t('app', 'м2') ?></th>
                 <th><?= Yii::t('app', 'лист') ?></th>
                 <th colspan="2">
-                    <?= Yii::t('app', 'Розничная<br>стоимость') ?>
+                    <?= Yii::t('app', 'Розничная<br>цена') ?>
                 </th>
             </tr>
             <?php $count = 0 ?>

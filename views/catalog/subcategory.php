@@ -35,21 +35,6 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
     </div>
 </div>
 
-    <?php if($subcategoryLink):?>
-        <div class="container subcategory-link-block margin-bottom-0">
-            <div class="link-block">
-                <?php $linkNumBlock = 4; $linkCount = count($subcategoryLink);  ?>
-                <?php foreach($subcategoryLink as $link): $linkNumBlock-- ; $linkCount-- ;
-                    $linkCategory = $link->productCategory; ?>
-                    <?= Html::a($linkCategory->title, ['/catalog' . $linkCategory->getFullAlias()], ['target' => '_blank']); ?>
-                <?php endforeach;?>      
-            </div>
-            <div class="line-block">
-                <div class="line-border"></div>
-            </div>
-        </div>
-    <?php endif;?>
-
 <?= $this->render('@app/views/layouts/inc/breadcrumbs'); ?>
 
 <?php if ($category->id !=91 ): /*if this not kovka*/?>
@@ -80,7 +65,7 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
                 <th><?= Yii::t('app', 'м2') ?></th>
                 <th><?= Yii::t('app', 'лист') ?></th>
                 <th colspan="2">
-                    <?= Yii::t('app', 'Розничная<br>стоимость') ?>
+                    <?= Yii::t('app', 'Розничная<br>цена') ?>
                 </th>
             </tr>
             <?php $count = 0 ?>
@@ -169,6 +154,18 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
     <?= $this->render('@app/views/catalog/inc/kovka',['subcategory'=>$subcategory, 'selectedCity'=> $selectedCity,
         'category'=> $category, 'products'=>$products, 'city'=>$city])
     ; ?>
+<?php endif;?>
+
+<?php if($subcategoryLink):?>
+    <div class="container subcategory-link-block margin-bottom-0">
+        <div class="top-line"></div>
+        <span class="h3"><center><?= Yii::t('app', 'Возможно вас заинтересует')?></center></span>
+        <div class="link-block">
+            <?php foreach($subcategoryLink as $link): $linkCategory = $link->productCategory; ?>
+                <?= Html::a($linkCategory->title, ['/catalog' . $linkCategory->getFullAlias()], ['target' => '_blank']); ?>
+            <?php endforeach;?>      
+        </div>
+    </div>
 <?php endif;?>
 
 <div class="container double-download-block">

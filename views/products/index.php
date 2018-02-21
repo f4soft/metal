@@ -81,7 +81,7 @@ $image = '/' . $category->getImageUrl(false, \app\models\ProductsCategories::tab
                             <th><?= Yii::t('app', 'м2') ?></th>
                             <th><?= Yii::t('app', 'лист') ?></th>
                             <th colspan="2">
-                                <?= Yii::t('app', 'Розничная<br>стоимость') ?>
+                                <?= Yii::t('app', 'Розничная<br>цена') ?>
                             </th>
                         </tr>
                         <?php $productAddInfo = $product->cityProducts; ?>

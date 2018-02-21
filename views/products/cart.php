@@ -26,7 +26,7 @@ $block_settings = BlockSettings::find()->one();
                 <th><?= Yii::t('app', 'п.м/кв.м') ?></th>
                 <th><?= Yii::t('app', 'м2') ?></th>
                 <th><?= Yii::t('app', 'лист') ?></th>
-                <th><?= Yii::t('app', "Розничная<br>стоимость") ?></th>
+                <th><?= Yii::t('app', "Розничная<br>цена") ?></th>
                 <th>&nbsp;</th>
             </tr>
             <?php foreach (\app\models\CartProducts::getCartProducts() as $product): ?>
