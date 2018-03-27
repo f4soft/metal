@@ -2785,6 +2785,10 @@ body .radio-custom:focus + .radio-custom-label {
 .product-list-by-category .table tr td:last-child {
     background: #283891;
 }
+.product-list-by-category .table tr td.contact_manager {
+    background: #DFDFDF;
+    border: 1px solid #B1B1B1;
+}
 .product-list-by-category .table tr td:nth-child(2),
 .product-list-in-cart .table tr td:nth-child(2) {
     width: 96px;
@@ -5532,6 +5536,7 @@ body,
 .subcategory-link-block .link-block{
     position: relative;
     display: table;
+	width: 100%;
     padding-bottom: 30px;
     padding-top: 20px;
     border-bottom: 1px solid #D9DADB;

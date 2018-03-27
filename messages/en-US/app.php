@@ -195,6 +195,7 @@ return [
     'СЕРВИСНЫЙ МЕТАЛЛОЦЕНТР' => 'Metal service center',
     'Самый большой выбор металлопроката' => 'Largest selection of metal',
     'Связаться с нами' => 'Contact us',
+    'Cвяжитесь с менеджером' => 'Contact the manager',
     'Смотреть Все новости' => 'All news',
     'Смотреть все новости' => 'All news',
     'Смотреть всё' => 'See all',

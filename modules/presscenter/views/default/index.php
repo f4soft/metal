@@ -60,16 +60,19 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'template' => "<li cl
 </div>
 
 <?php if($sales):?>
-    <div class="container special-offer-block double-banners-block">
+    <div class="container special-offer-car-block">
         <h2 class="h2 stripped-title"><span><?= Yii::t('app', 'Специальные предложения')?></span></h2>
-        <div class="row">
-            <?php foreach ($sales as $sale):?>
-                <div class="col-lg-6">
-                    <?= Html::a(Html::img('/'.$sale->getImageUrl(Yii::$app->params['imagePresets']['sales']['small'],
-                        \app\models\Sales::tableName()),['alt' => $sale->image_alt, 'title' => $sale->image_title]),
-                        \yii\helpers\Url::to(["/$city/sales/{$sale->alias}"]))?>
+        <div class="special-offer-carousel" >
+            <?php foreach ($sales as $sale) :?>
+                <div class="item col-xs-2">
+                    <?php $root = \app\models\ProductsCategories::getRootCategory($sale->id); ?>
+                    <a href="<?= \yii\helpers\Url::to(["/$city/sales/{$root->alias}/{$sale->alias}"])?>">                         
+                        <?php $imageSale = '/' . $sale->getImageUrl(Yii::$app->params['imagePresets']['categories']['sub'], \app\models\ProductsCategories::tableName(), 'image'); ?>
+                        <?= \kartik\helpers\Html::img($imageSale, ['class' => "img", 'alt' => $sale->image_alt, 'title' => $sale->image_title]); ?>
+                        <span class="title"><?= $sale->title?></span>
+                    </a>
                 </div>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </div>
 <?php endif;?>

@@ -10,6 +10,7 @@ use app\models\Forms\ContactForm;
 use app\models\Forms\NewsSubscribeForm;
 use app\models\News;
 use app\models\Sales;
+use app\models\ProductsCategories;
 use Yii;
 
 /**
@@ -29,7 +30,7 @@ class DefaultController extends AppController
          */
         Yii::$app->formatter->locale = Yii::$app->language;
         $news = News::getPressCenterNews();
-        $sales = Sales::getSales();
+        $sales = ProductsCategories::getSubcategorySaleRand();
         $articles = Articles::getArticlesForPressCenter();
         $block_settings = BlockSettings::find()->one();
         $modelContact = new ContactForm();

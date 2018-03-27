@@ -110,18 +110,22 @@ $image = '/' . $subcategory->getImageUrl(Yii::$app->params['imagePresets']['cate
                             <td class="m"></td>
                             <td class="m2"></td>
                             <td class="list"></td>
-                            <td class="price"><?= $productAddInfo[0]->price ?></td>
-                            <td>
-                                <?= Html::beginForm(\yii\helpers\Url::to(['cart/add-to-cart']), 'post', ['class' => 'add-to-cart-form', 'id' => 'add_' . $product->id]); ?>
-                                <?= Html::input('hidden', 'CartProducts[weight]', 0); ?>
-                                <?= Html::input('hidden', 'CartProducts[count]', 1); ?>
-                                <?= Html::input('hidden', 'CartProducts[user_id]', $user_id) ?>
-                                <?= Html::input('hidden', 'CartProducts[product_id]', $product->id); ?>
-                                <?= Html::input('hidden', 'CartProducts[unit]', $product->unit); ?>
-                                <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price); ?>
-                                <?= Html::submitButton(Yii::t('app', 'Купить').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart', 'data-selector' => 'add_' . $product->id]) ?>
-                                <?= Html::endForm(); ?>
-                            </td>
+                            <?php if($productAddInfo[0]->price):?>
+                                <td class="price"><?= $productAddInfo[0]->price ?></td>
+                                <td>
+                                    <?= Html::beginForm(\yii\helpers\Url::to(['cart/add-to-cart']), 'post', ['class' => 'add-to-cart-form', 'id' => 'add_' . $product->id]); ?>
+                                    <?= Html::input('hidden', 'CartProducts[weight]', 0); ?>
+                                    <?= Html::input('hidden', 'CartProducts[count]', 1); ?>
+                                    <?= Html::input('hidden', 'CartProducts[user_id]', $user_id) ?>
+                                    <?= Html::input('hidden', 'CartProducts[product_id]', $product->id); ?>
+                                    <?= Html::input('hidden', 'CartProducts[unit]', $product->unit); ?>
+                                    <?= Html::input('hidden', 'CartProducts[price]', $product->cityProducts[0]->price); ?>
+                                    <?= Html::submitButton(Yii::t('app', 'Купить').($product->stock ? '<span>'.Yii::t('app', 'Акция').'</span>' : ''), ['name' => 'order', 'class' => 'add-to-cart', 'data-selector' => 'add_' . $product->id]) ?>
+                                    <?= Html::endForm(); ?>
+                                </td>
+                            <?php else:?>
+                                <td colspan="2" class="contact_manager"><?= Yii::t('app', 'Cвяжитесь с менеджером') ?></td>
+                            <?php endif;?>
                         </tr>
                     <?php endif; ?>
                 <?php endif; ?>
