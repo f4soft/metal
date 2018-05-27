@@ -19,7 +19,7 @@ class AutoImportController extends AppController
      * @return mixed
      */
     public function actionIndex()
-    {
+    {    
         $searchModel = new AutoImportSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->setSort(['defaultOrder' => ['id' => SORT_DESC]]);
@@ -38,15 +38,15 @@ class AutoImportController extends AppController
      */
     public function actionCreate()
     {
-        $model = new Cities();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect('index');
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+//        $model = new Cities();
+//
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect('index');
+//        } else {
+//            return $this->render('create', [
+//                'model' => $model,
+//            ]);
+//        }
     }
 
     /**
@@ -57,15 +57,15 @@ class AutoImportController extends AppController
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect('index');
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+//        $model = $this->findModel($id);
+//
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect('index');
+//        } else {
+//            return $this->render('update', [
+//                'model' => $model,
+//            ]);
+//        }
     }
 
 

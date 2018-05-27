@@ -14,7 +14,7 @@ class NotfoundController extends Controller
 {       
     
     public function actionIndex()
-    {
+    { 
         $baseDir = Yii::$app->basePath;
         $file = $baseDir . '/404_error.csv';
         $count = 0;
