@@ -109,7 +109,15 @@ class BaseModel extends ActiveRecord
 
     public function getProducts()
     {
-        return $this->hasMany(Products::className(), ['category_id' => 'id']);
+        $lang = \Yii::$app->language;
+        switch ($lang){
+            case "ua" : $lg = "ua"; break;
+            case "en" : $lg = "en"; break;
+            case "ru" : $lg = "ru"; break;
+            default : $lg = "ru"; break;                
+        }
+       
+        return $this->hasMany(Products::className(), ['category_id' => 'id'])->orderBy(['products.title_'.$lg => SORT_ASC]);
     }
     
     public function getProductsale()

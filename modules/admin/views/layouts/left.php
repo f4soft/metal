@@ -174,6 +174,12 @@
                         'active' => Yii::$app->controller->id == 'seo-tags'
                     ],
                     [
+                        'label' => 'Авто Импорт',
+                        'icon' => 'fa fa-circle-o',
+                        'url' => Url::to(['/admin/auto-import']),
+                        'active' => Yii::$app->controller->id == 'auto-import'
+                    ],
+                    [
                         'label' => 'Фото в шапке',
                         'icon' => 'fa fa-circle-o',
                         'url' => Url::to(['/admin/pages-images']),

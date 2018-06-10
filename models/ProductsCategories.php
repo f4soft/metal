@@ -19,7 +19,7 @@ use creocoder\nestedsets\NestedSetsBehavior;
  * @property string $title_en
  * @property string $title_price_ru
  * @property string $title_price_ua
- * @property string $title_price_en
+ * @property string $title_price_en 
  * @property string $image
  * @property string $image_alt_ru
  * @property string $image_alt_ua
@@ -50,6 +50,30 @@ use creocoder\nestedsets\NestedSetsBehavior;
  * @property string $file_price_ru
  * @property string $file_price_ua
  * @property string $file_price_en
+ * @property string $file_price_vinnitsa_ru
+ * @property string $file_price_vinnitsa_ua
+ * @property string $file_price_vinnitsa_en 
+ * @property string $file_price_dnepr_ru
+ * @property string $file_price_dnepr_ua 
+ * @property string $file_price_dnepr_en 
+ * @property string $file_price_lvov_ru
+ * @property string $file_price_lvov_ua
+ * @property string $file_price_lvov_en 
+ * @property string $file_price_odessa_ru
+ * @property string file_price_odessa_ua
+ * @property string $file_price_odessa_en 
+ * @property string $file_price_kharkov_ru
+ * @property string $file_price_kharkov_ua
+ * @property string $file_price_kharkov_en 
+ * @property string $file_price_chernihiv_ru
+ * @property string $file_price_chernihiv_ua
+ * @property string $file_price_chernihiv_en  
+ * @property string $file_price_khmelnytskyi_ru
+ * @property string $file_price_khmelnytskyi_ua
+ * @property string $file_price_khmelnytskyi_en  
+ * @property string $file_price_poltava_ru
+ * @property string $file_price_poltava_ua
+ * @property string $file_price_poltava_en 
  * @property string $image_price_ru
  * @property string $image_price_ua
  * @property string $image_price_en
@@ -81,7 +105,32 @@ class ProductsCategories extends BaseModel
 
     public $filePriceRu;
     public $filePriceUa;
-    public $filePriceEn;
+    public $filePriceEn;    
+    public $filePriceVinnitsaRu;
+    public $filePriceVinnitsaUa;
+    public $filePriceVinnitsaEn;    
+    public $filePriceDneprRu;
+    public $filePriceDneprUa;
+    public $filePriceDneprEn;    
+    public $filePriceLvovRu;
+    public $filePriceLvovUa;
+    public $filePriceLvovEn;    
+    public $filePriceOdessaRu;
+    public $filePriceOdessaUa;
+    public $filePriceOdessaEn;
+    public $filePriceKharkovRu;
+    public $filePriceKharkovUa;
+    public $filePriceKharkovEn;    
+    public $filePriceChernihivRu;
+    public $filePriceChernihivUa;
+    public $filePriceChernihivEn;    
+    public $filePriceKhmelnytskyiRu;
+    public $filePriceKhmelnytskyiUa;
+    public $filePriceKhmelnytskyiEn;    
+    public $filePricePoltavaRu;
+    public $filePricePoltavaUa;
+    public $filePricePoltavaEn;
+    
     public $imagePriceRu;
     public $imagePriceUa;
     public $imagePriceEn;
@@ -136,6 +185,14 @@ class ProductsCategories extends BaseModel
         return [
             [['image'], 'file', 'extensions' => 'png, jpg', 'maxSize' => Yii::$app->params['maxSize']],
             [['file_price_ru','file_price_ua','file_price_en', 'file_catalog_ua','file_catalog_en','file_catalog_ru'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_vinnitsa_ru', 'file_price_vinnitsa_ua', 'file_price_vinnitsa_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_dnepr_ru', 'file_price_dnepr_ua', 'file_price_dnepr_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_lvov_ru', 'file_price_lvov_ua', 'file_price_lvov_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_odessa_ru', 'file_price_odessa_ua', 'file_price_odessa_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_kharkov_ru', 'file_price_kharkov_ua', 'file_price_kharkov_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_chernihiv_ru', 'file_price_chernihiv_ua', 'file_price_chernihiv_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_khmelnytskyi_ru', 'file_price_khmelnytskyi_ua', 'file_price_khmelnytskyi_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
+            [['file_price_poltava_ru', 'file_price_poltava_ua', 'file_price_poltava_en'], 'file', 'extensions' => 'pdf', 'maxSize' => Yii::$app->params['fileMaxSize']],
             [['image_price_ru','image_price_ua','image_price_en','image_catalog_ru','image_catalog_ua',
                 'image_catalog_en'], 'file', 'extensions' => 'png, jpg',
                 'maxSize' => Yii::$app->params['maxSize']],
@@ -190,7 +247,31 @@ class ProductsCategories extends BaseModel
 
             'file_price_ru' => Yii::t('app/admin', 'Прайс'),
             'file_price_ua' => Yii::t('app/admin', 'Прайс'),
-            'file_price_en' => Yii::t('app/admin', 'Прайс'),
+            'file_price_en' => Yii::t('app/admin', 'Прайс'),            
+            'file_price_vinnitsa_ru' => Yii::t('app/admin', 'Прайс для Винницы'),
+            'file_price_vinnitsa_ua' => Yii::t('app/admin', 'Прайс для Винницы'),
+            'file_price_vinnitsa_en' => Yii::t('app/admin', 'Прайс для Винницы'),            
+            'file_price_dnepr_ru' => Yii::t('app/admin', 'Прайс для Днепра'),
+            'file_price_dnepr_ua' => Yii::t('app/admin', 'Прайс для Днепра'),
+            'file_price_dnepr_en' => Yii::t('app/admin', 'Прайс для Днепра'),            
+            'file_price_lvov_ru' => Yii::t('app/admin', 'Прайс для Львова'),
+            'file_price_lvov_ua' => Yii::t('app/admin', 'Прайс для Львова'),
+            'file_price_lvov_en' => Yii::t('app/admin', 'Прайс для Львова'),            
+            'file_price_odessa_ru' => Yii::t('app/admin', 'Прайс для Одессы'),
+            'file_price_odessa_ua' => Yii::t('app/admin', 'Прайс для Одессы'),
+            'file_price_odessa_en' => Yii::t('app/admin', 'Прайс для Одессы'),            
+            'file_price_kharkov_ru' => Yii::t('app/admin', 'Прайс для Харькова'),
+            'file_price_kharkov_ua' => Yii::t('app/admin', 'Прайс для Харькова'),
+            'file_price_kharkov_en' => Yii::t('app/admin', 'Прайс для Харькова'),            
+            'file_price_chernihiv_ru' => Yii::t('app/admin', 'Прайс для Чернигова'),
+            'file_price_chernihiv_ua' => Yii::t('app/admin', 'Прайс для Чернигова'),
+            'file_price_chernihiv_en' => Yii::t('app/admin', 'Прайс для Чернигова'),            
+            'file_price_khmelnytskyi_ru' => Yii::t('app/admin', 'Прайс для Хмельницкого'),
+            'file_price_khmelnytskyi_ua' => Yii::t('app/admin', 'Прайс для Хмельницкого'),
+            'file_price_khmelnytskyi_en' => Yii::t('app/admin', 'Прайс для Хмельницкого'),            
+            'file_price_poltava_ru' => Yii::t('app/admin', 'Прайс для Полтавы'),
+            'file_price_poltava_ua' => Yii::t('app/admin', 'Прайс для Полтавы'),
+            'file_price_poltava_en' => Yii::t('app/admin', 'Прайс для Полтавы'),            
             'image_price_ru' => Yii::t('app/admin', 'Картинка для прайса'),
             'image_price_ua' => Yii::t('app/admin', 'Картинка для прайса'),
             'image_price_en' => Yii::t('app/admin', 'Картинка для прайса'),
@@ -223,10 +304,19 @@ class ProductsCategories extends BaseModel
         $this->article_title = $this->{self::getTranslate('article_title')};
         $this->article_description = $this->{self::getTranslate('article_description')};
         $this->page_description = $this->{self::getTranslate('page_description')};
-        $this->file_price = $this->{self::getTranslate('file_price')};
+        
         $this->image_price = $this->{self::getTranslate('image_price')};
         $this->file_catalog = $this->{self::getTranslate('file_catalog')};
         $this->image_catalog = $this->{self::getTranslate('image_catalog')};
+        
+        $city = \Yii::$app->request->get('city') ? : '';  
+        $file_price = 'file_price';
+        if($city && $city != "kiev"){
+            $file_price = 'file_price_'.$city;
+        }
+        
+        $this->file_price = $this->{self::getTranslate($file_price)};
+        
         parent::afterFind();
     }
 
@@ -245,11 +335,83 @@ class ProductsCategories extends BaseModel
                 case 'ru':
                     $this->filePriceRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_ru);
                     break;
+                case 'vinnitsa_ru':
+                    $this->filePriceVinnitsaRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_vinnitsa_ru);
+                    break;
+                case 'dnepr_ru':
+                    $this->filePriceDneprRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_dnepr_ru);
+                    break;
+                case 'lvov_ru':
+                    $this->filePriceLvovRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_lvov_ru);
+                    break;
+                case 'odessa_ru':
+                    $this->filePriceOdessaRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_odessa_ru);
+                    break;
+                case 'kharkov_ru':
+                    $this->filePriceKharkovRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_kharkov_ru);
+                    break;
+                case 'chernihiv_ru':
+                    $this->filePriceChernihivRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_chernihiv_ru);
+                    break;
+                case 'khmelnytskyi_ru':
+                    $this->filePriceKhmelnytskyiRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_khmelnytskyi_ru);
+                    break;
+                case 'poltava_ru':
+                    $this->filePricePoltavaRu->saveAs("uploads/prices/{$this->id}/" . $this->file_price_poltava_ru);
+                    break;
                 case 'ua':
                     $this->filePriceUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_ua);
                     break;
+                case 'vinnitsa_ua':
+                    $this->filePriceVinnitsaUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_vinnitsa_ua);
+                    break;
+                case 'dnepr_ua':
+                    $this->filePriceDneprUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_dnepr_ua);
+                    break;
+                case 'lvov_ua':
+                    $this->filePriceLvovUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_lvov_ua);
+                    break;
+                case 'odessa_ua':
+                    $this->filePriceOdessaUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_odessa_ua);
+                    break;
+                case 'kharkov_ua':
+                    $this->filePriceKharkovUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_kharkov_ua);
+                    break;
+                case 'chernihiv_ua':
+                    $this->filePriceChernihivUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_chernihiv_ua);
+                    break;
+                case 'khmelnytskyi_ua':
+                    $this->filePriceKhmelnytskyiUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_khmelnytskyi_ua);
+                    break;
+                case 'poltava_ua':
+                    $this->filePricePoltavaUa->saveAs("uploads/prices/{$this->id}/" . $this->file_price_poltava_ua);
+                    break;
                 case 'en':
                     $this->filePriceEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_en);
+                    break;
+                case 'vinnitsa_en':
+                    $this->filePriceVinnitsaEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_vinnitsa_en);
+                    break;
+                case 'dnepr_en':
+                    $this->filePriceDneprEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_dnepr_en);
+                    break;
+                case 'lvov_en':
+                    $this->filePriceLvovEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_lvov_en);
+                    break;
+                case 'odessa_en':
+                    $this->filePriceOdessaEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_odessa_en);
+                    break;
+                case 'kharkov_en':
+                    $this->filePriceKharkovEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_kharkov_en);
+                    break;
+                case 'chernihiv_en':
+                    $this->filePriceChernihivEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_chernihiv_en);
+                    break;
+                case 'khmelnytskyi_en':
+                    $this->filePriceKhmelnytskyiEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_khmelnytskyi_en);
+                    break;
+                case 'poltava_en':
+                    $this->filePricePoltavaEn->saveAs("uploads/prices/{$this->id}/" . $this->file_price_poltava_en);
                     break;
             }
             return true;
@@ -503,9 +665,35 @@ class ProductsCategories extends BaseModel
     public function getPriceFiles()
     {
         return $data = [
-            'ru'=> "uploads/prices/{$this->id}/{$this->file_price_ru}",
-            'ua'=> "uploads/prices/{$this->id}/{$this->file_price_ua}",
-            'en'=> "uploads/prices/{$this->id}/{$this->file_price_en}",
+            "ru" => "uploads/prices/{$this->id}/{$this->file_price_ru}",
+            "vinnitsa_ru" => "uploads/prices/{$this->id}/{$this->file_price_vinnitsa_ru}", 
+            "dnepr_ru" => "uploads/prices/{$this->id}/{$this->file_price_dnepr_ru}", 
+            "lvov_ru" => "uploads/prices/{$this->id}/{$this->file_price_lvov_ru}", 
+            "odessa_ru" => "uploads/prices/{$this->id}/{$this->file_price_odessa_ru}", 
+            "kharkov_ru" => "uploads/prices/{$this->id}/{$this->file_price_kharkov_ru}", 
+            "chernihiv_ru" => "uploads/prices/{$this->id}/{$this->file_price_chernihiv_ru}", 
+            "khmelnytskyi_ru" => "uploads/prices/{$this->id}/{$this->file_price_khmelnytskyi_ru}", 
+            "poltava_ru" => "uploads/prices/{$this->id}/{$this->file_price_poltava_ru}",       
+
+            "ua" => "uploads/prices/{$this->id}/{$this->file_price_ua}",
+            "vinnitsa_ua" => "uploads/prices/{$this->id}/{$this->file_price_vinnitsa_ua}",
+            "dnepr_ua" => "uploads/prices/{$this->id}/{$this->file_price_dnepr_ua}",
+            "lvov_ua" => "uploads/prices/{$this->id}/{$this->file_price_lvov_ua}",
+            "odessa_ua" => "uploads/prices/{$this->id}/{$this->file_price_odessa_ua}",
+            "kharkov_ua" => "uploads/prices/{$this->id}/{$this->file_price_kharkov_ua}",
+            "chernihiv_ua" => "uploads/prices/{$this->id}/{$this->file_price_chernihiv_ua}",
+            "khmelnytskyi_ua" => "uploads/prices/{$this->id}/{$this->file_price_khmelnytskyi_ua}",
+            "poltava_ua" => "uploads/prices/{$this->id}/{$this->file_price_poltava_ua}",
+
+            "en" => "uploads/prices/{$this->id}/{$this->file_price_en}",
+            "vinnitsa_en" => "uploads/prices/{$this->id}/{$this->file_price_vinnitsa_en}",
+            "dnepr_en" => "uploads/prices/{$this->id}/{$this->file_price_dnepr_en}",
+            "lvov_en" => "uploads/prices/{$this->id}/{$this->file_price_lvov_en}",
+            "odessa_en" => "uploads/prices/{$this->id}/{$this->file_price_odessa_en}",
+            "kharkov_en" => "uploads/prices/{$this->id}/{$this->file_price_kharkov_en}",
+            "chernihiv_en" => "uploads/prices/{$this->id}/{$this->file_price_chernihiv_en}",
+            "khmelnytskyi_en" => "uploads/prices/{$this->id}/{$this->file_price_khmelnytskyi_en}",
+            "poltava_en" => "uploads/prices/{$this->id}/{$this->file_price_poltava_en}",
         ];
     }
     public function getPriceImagesFiles()

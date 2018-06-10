@@ -108,6 +108,7 @@ class AutoimportController extends Controller
                     $dataAuto->status = 4;
                     $dataAuto->save();
                 
+                    @unlink($file);
                     var_dump('Category import has been success !');
                     
                     } catch (PDOException $e) {
@@ -143,6 +144,8 @@ class AutoimportController extends Controller
     
     public function actionProducts()
     {
+        set_time_limit(3600); /* 1 hour */
+        
         $dataAuto = modelAutoImport::find()
                 ->where(['status' => 2])
                 ->andWhere(['file_type' => 'products'])

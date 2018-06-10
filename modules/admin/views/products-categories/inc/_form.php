@@ -14,8 +14,8 @@ use kartik\tabs\TabsX;
     <?php $form = ActiveForm::begin(); ?>
     <?php $preset_100 = $model->isNewRecord ? false : $preset_100; ?>
     <?php $preset_price_100 = $model->isNewRecord ? false : $preset_price_100; ?>
-    <?= $form->field($model, 'status')->checkbox() ?>
 
+    <?= $form->field($model, 'status')->checkbox() ?>
     <?= $form->field($model, 'parent_id')->dropDownList($rootCategories) ?>
 
     <?php if(!$model->isNewRecord):?>

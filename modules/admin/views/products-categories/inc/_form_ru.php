@@ -22,6 +22,7 @@ use kartik\tabs\TabsX;
             ]
         ]);
         ?>
+
         <?php if ( ! $model->isNewRecord && ! empty($priceName['ru'])): ?>
             <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['ru'], ['target' => '_blank']) ?>
         <?php endif; ?>
@@ -32,7 +33,104 @@ use kartik\tabs\TabsX;
                 'showUpload' => false,
                 'showCaption' => true,
             ]
+        ]); ?>  
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['vinnitsa_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['vinnitsa_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_vinnitsa_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>  
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['dnepr_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['dnepr_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_dnepr_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
         ]); ?>
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['lvov_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['lvov_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_lvov_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['odessa_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['odessa_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_odessa_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['kharkov_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['kharkov_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_kharkov_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+	
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['chernihiv_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['chernihiv_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_chernihiv_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['khmelnytskyi_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['khmelnytskyi_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_khmelnytskyi_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>
+    
+        <?php if ( ! $model->isNewRecord && ! empty($priceName['poltava_ru'])): ?>
+            <?= \kartik\helpers\Html::a('Загруженный прайс', "@web/". $priceName['poltava_ru'], ['target' => '_blank']) ?>
+        <?php endif; ?>
+        <?= $form->field($model, 'file_price_poltava_ru')->fileInput()->widget(\kartik\widgets\FileInput::classname(), [
+            'options' => ['accept' => ['application/pdf']],
+            'pluginOptions' => [
+                'showRemove' => true,
+                'showUpload' => false,
+                'showCaption' => true,
+            ]
+        ]); ?>    
+
 
         <?php if ( ! $model->isNewRecord && ! empty($preset_catalog_100['ru'])): ?>
             <?= Html::img("@web/{$preset_catalog_100['ru']}", ['width' => '100']) ?>

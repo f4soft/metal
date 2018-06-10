@@ -3,6 +3,8 @@ namespace app\controllers;
 
 use app\components\AppController;
 use app\models\AutoImport;
+use app\models\ProductsCategories;
+use app\models\Cities;
 
 use Yii;
 use yii\web\Response;
@@ -16,7 +18,7 @@ class AsyncController extends AppController
     
     public function actionIndex()
     {
-        
+
     }
     
     public function actionReport()
@@ -52,6 +54,79 @@ class AsyncController extends AppController
                 return ['success' => 'error', 'message' => $e->getMessage()];    
             } catch (Exception $e) {
                 return ['success' => 'error', 'message' => $e->getMessage()];   
+            }
+        
+        } else {
+            return ['success' => 'error', 'message' => 'auth credential is failed'];    
+        }       
+    }
+    
+    public function actionPdf()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        
+        $headers = Yii::$app->request->headers;
+        $post = Yii::$app->request->post();    
+        
+        $accessToken = $headers->get('Metal-Auth');
+        
+        if($accessToken == "b640a0ce465fa2a4150c36b305c1c11b"){
+            
+            try {
+            
+                $city = Cities::find()->where(['external_id' => $post['city_id']])->one();  
+                $model = ProductsCategories::find()->where(['external_id' => $post['external_id']])->one();        
+                if($model && $city){
+
+                    $file = Yii::getAlias('@app') . "/xml/load_from_1c/" . $post['file_name'];  
+                    if (file_exists($file)) {
+
+                        $path = Yii::getAlias('@app') . "/www/uploads/prices/{$model->id}";
+                        if(!is_dir($path)){
+                            mkdir($path, 0777, true);
+                        }                  
+ 
+                        $file_result = copy($file, $path . "/" . $post['file_name']);                       
+                        if($file_result){
+
+                            switch($post['lang']){
+                                case "ru" : $lang = "ru"; break;
+                                case "ua" : $lang = "ua"; break;
+                                case "en" : $lang = "en"; break;
+                                default : 
+                                    return ['success' => 'error', 'message' => 'Invalid lang parameter']; 
+                                    break;
+                            }
+                            
+                            if($city->alias == "kiev"){
+                                $file_price = "file_price_$lang";
+                            } else {                                
+                                $file_price = "file_price_" . $city->alias . "_" . $lang;
+                            }
+                            
+                            $model->{$file_price} = $post['file_name'];
+
+                            $model->save();
+                            @unlink($file);
+
+                            return ['success' => 'ok', 'message' => 'data has been updated']; 
+
+                        } else {
+                            @unlink($file);
+                            return ['success' => 'error', 'message' => 'Operation move file return false']; 
+                        }
+
+                    } else {
+                        return ['success' => 'error', 'message' => 'File not exist']; 
+                    }
+                } else {                
+                    return ['success' => 'error', 'message' => 'External_id not exist']; 
+                }
+
+            } catch (PDOException $e) {
+                return ['success' => 'error', 'message' => $e->getMessage()];                            
+            } catch (Exception $e) {
+                return ['success' => 'error', 'message' => $e->getMessage()];  
             }
         
         } else {

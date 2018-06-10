@@ -111,7 +111,7 @@ class ProductsCategoriesController extends AppController
         $imageModel = new ImageUpload(ProductsCategories::tableName());
         $preset_100 = $preset_price_100 = $preset_catalog_100 = '';
 //        $priceName = $model->file_price ? $model->file_price : "";
-        $priceName = $model->getPriceFiles();
+        $priceName = $model->getPriceFiles();     
         $catalogName = $model->getCatalogFiles();
         if($model->image) {
             $preset_100 = $imageModel->getImage($model, Yii::$app->params['imagePresets']['categories']['admin'], 'view', 'image');
@@ -137,11 +137,35 @@ class ProductsCategoriesController extends AppController
             }
             $model->filePriceRu = UploadedFile::getInstance($model, 'file_price_ru');
             $model->filePriceUa = UploadedFile::getInstance($model, 'file_price_ua');
-            $model->filePriceEn = UploadedFile::getInstance($model, 'file_price_en');
+            $model->filePriceEn = UploadedFile::getInstance($model, 'file_price_en');            
+            $model->filePriceVinnitsaRu = UploadedFile::getInstance($model, 'file_price_vinnitsa_ru');
+            $model->filePriceVinnitsaUa = UploadedFile::getInstance($model, 'file_price_vinnitsa_ua');
+            $model->filePriceVinnitsaEn = UploadedFile::getInstance($model, 'file_price_vinnitsa_en');            
+            $model->filePriceDneprRu = UploadedFile::getInstance($model, 'file_price_dnepr_ru');
+            $model->filePriceDneprUa = UploadedFile::getInstance($model, 'file_price_dnepr_ua');
+            $model->filePriceDneprEn = UploadedFile::getInstance($model, 'file_price_dnepr_en');            
+            $model->filePriceLvovRu = UploadedFile::getInstance($model, 'file_price_lvov_ru');
+            $model->filePriceLvovUa = UploadedFile::getInstance($model, 'file_price_lvov_ua');
+            $model->filePriceLvovEn = UploadedFile::getInstance($model, 'file_price_lvov_en');            
+            $model->filePriceOdessaRu = UploadedFile::getInstance($model, 'file_price_odessa_ru');
+            $model->filePriceOdessaUa = UploadedFile::getInstance($model, 'file_price_odessa_ua');
+            $model->filePriceOdessaEn = UploadedFile::getInstance($model, 'file_price_odessa_en');            
+            $model->filePriceKharkovRu = UploadedFile::getInstance($model, 'file_price_kharkov_ru');
+            $model->filePriceKharkovUa = UploadedFile::getInstance($model, 'file_price_kharkov_ua');
+            $model->filePriceKharkovEn = UploadedFile::getInstance($model, 'file_price_kharkov_en');            
+            $model->filePriceChernihivRu = UploadedFile::getInstance($model, 'file_price_chernihiv_ru');
+            $model->filePriceChernihivUa = UploadedFile::getInstance($model, 'file_price_chernihiv_ua');
+            $model->filePriceChernihivEn = UploadedFile::getInstance($model, 'file_price_chernihiv_en');            
+            $model->filePriceKhmelnytskyiRu = UploadedFile::getInstance($model, 'file_price_khmelnytskyi_ru');
+            $model->filePriceKhmelnytskyiUa = UploadedFile::getInstance($model, 'file_price_khmelnytskyi_ua');
+            $model->filePriceKhmelnytskyiEn = UploadedFile::getInstance($model, 'file_price_khmelnytskyi_en');            
+            $model->filePricePoltavaRu = UploadedFile::getInstance($model, 'file_price_poltava_ru');
+            $model->filePricePoltavaUa = UploadedFile::getInstance($model, 'file_price_poltava_ua');
+            $model->filePricePoltavaEn = UploadedFile::getInstance($model, 'file_price_poltava_en');
+
             $model->imagePriceRu = UploadedFile::getInstance($model, 'image_price_ru');
             $model->imagePriceUa = UploadedFile::getInstance($model, 'image_price_ua');
             $model->imagePriceEn = UploadedFile::getInstance($model, 'image_price_en');
-
             $model->fileCatalogRu = UploadedFile::getInstance($model, 'file_catalog_ru');
             $model->fileCatalogUa = UploadedFile::getInstance($model, 'file_catalog_ua');
             $model->fileCatalogEn = UploadedFile::getInstance($model, 'file_catalog_en');
@@ -158,16 +182,136 @@ class ProductsCategoriesController extends AppController
                 "{$model->filePriceRu->baseName}.{$model->filePriceRu->extension}" : $model->file_price_ru;
             $post['ProductsCategories']['file_price_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_ru']);
             $model->file_price_ru = $post['ProductsCategories']['file_price_ru'];
+            
+            $post['ProductsCategories']['file_price_vinnitsa_ru'] = !empty($model->filePriceVinnitsaRu) ?
+                "{$model->filePriceVinnitsaRu->baseName}.{$model->filePriceVinnitsaRu->extension}" : $model->file_price_vinnitsa_ru;
+            $post['ProductsCategories']['file_price_vinnitsa_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_vinnitsa_ru']);
+            $model->file_price_vinnitsa_ru = $post['ProductsCategories']['file_price_vinnitsa_ru'];
+            
+            $post['ProductsCategories']['file_price_dnepr_ru'] = !empty($model->filePriceDneprRu) ?
+                "{$model->filePriceDneprRu->baseName}.{$model->filePriceDneprRu->extension}" : $model->file_price_dnepr_ru;
+            $post['ProductsCategories']['file_price_dnepr_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_dnepr_ru']);
+            $model->file_price_dnepr_ru = $post['ProductsCategories']['file_price_dnepr_ru'];
+            
+            $post['ProductsCategories']['file_price_lvov_ru'] = !empty($model->filePriceLvovRu) ?
+                "{$model->filePriceLvovRu->baseName}.{$model->filePriceLvovRu->extension}" : $model->file_price_lvov_ru;
+            $post['ProductsCategories']['file_price_lvov_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_lvov_ru']);
+            $model->file_price_lvov_ru = $post['ProductsCategories']['file_price_lvov_ru'];
+            
+            $post['ProductsCategories']['file_price_odessa_ru'] = !empty($model->filePriceOdessaRu) ?
+                "{$model->filePriceOdessaRu->baseName}.{$model->filePriceOdessaRu->extension}" : $model->file_price_odessa_ru;
+            $post['ProductsCategories']['file_price_odessa_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_odessa_ru']);
+            $model->file_price_odessa_ru = $post['ProductsCategories']['file_price_odessa_ru'];
+            
+            $post['ProductsCategories']['file_price_kharkov_ru'] = !empty($model->filePriceKharkovRu) ?
+                "{$model->filePriceKharkovRu->baseName}.{$model->filePriceKharkovRu->extension}" : $model->file_price_kharkov_ru;
+            $post['ProductsCategories']['file_price_kharkov_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_kharkov_ru']);
+            $model->file_price_kharkov_ru = $post['ProductsCategories']['file_price_kharkov_ru'];
+            
+            $post['ProductsCategories']['file_price_chernihiv_ru'] = !empty($model->filePriceChernihivRu) ?
+                "{$model->filePriceChernihivRu->baseName}.{$model->filePriceChernihivRu->extension}" : $model->file_price_ru;
+            $post['ProductsCategories']['file_price_chernihiv_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_chernihiv_ru']);
+            $model->file_price_chernihiv_ru = $post['ProductsCategories']['file_price_chernihiv_ru'];
+            
+            $post['ProductsCategories']['file_price_khmelnytskyi_ru'] = !empty($model->filePriceKhmelnytskyiRu) ?
+                "{$model->filePriceKhmelnytskyiRu->baseName}.{$model->filePriceKhmelnytskyiRu->extension}" : $model->file_price_khmelnytskyi_ru;
+            $post['ProductsCategories']['file_price_khmelnytskyi_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_khmelnytskyi_ru']);
+            $model->file_price_khmelnytskyi_ru = $post['ProductsCategories']['file_price_khmelnytskyi_ru'];
+            
+            $post['ProductsCategories']['file_price_poltava_ru'] = !empty($model->filePricePoltavaRu) ?
+                "{$model->filePricePoltavaRu->baseName}.{$model->filePricePoltavaRu->extension}" : $model->file_price_poltava_ru;
+            $post['ProductsCategories']['file_price_poltava_ru'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_poltava_ru']);
+            $model->file_price_poltava_ru = $post['ProductsCategories']['file_price_poltava_ru'];
 
             $post['ProductsCategories']['file_price_ua'] = !empty($model->filePriceUa) ?
                 "{$model->filePriceUa->baseName}.{$model->filePriceUa->extension}" : $model->file_price_ua;
             $post['ProductsCategories']['file_price_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_ua']);
             $model->file_price_ua = $post['ProductsCategories']['file_price_ua'];
+            
+            $post['ProductsCategories']['file_price_vinnitsa_ua'] = !empty($model->filePriceVinnitsaUa) ?
+                "{$model->filePriceVinnitsaUa->baseName}.{$model->filePriceVinnitsaUa->extension}" : $model->file_price_vinnitsa_ua;
+            $post['ProductsCategories']['file_price_vinnitsa_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_vinnitsa_ua']);
+            $model->file_price_vinnitsa_ua = $post['ProductsCategories']['file_price_vinnitsa_ua'];
+            
+            $post['ProductsCategories']['file_price_dnepr_ua'] = !empty($model->filePriceDneprUa) ?
+                "{$model->filePriceDneprUa->baseName}.{$model->filePriceDneprUa->extension}" : $model->file_price_dnepr_ua;
+            $post['ProductsCategories']['file_price_dnepr_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_dnepr_ua']);
+            $model->file_price_dnepr_ua = $post['ProductsCategories']['file_price_dnepr_ua'];
+            
+            $post['ProductsCategories']['file_price_lvov_ua'] = !empty($model->filePriceLvovUa) ?
+                "{$model->filePriceLvovUa->baseName}.{$model->filePriceLvovUa->extension}" : $model->file_price_lvov_ua;
+            $post['ProductsCategories']['file_price_lvov_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_lvov_ua']);
+            $model->file_price_lvov_ua = $post['ProductsCategories']['file_price_lvov_ua'];
+            
+            $post['ProductsCategories']['file_price_odessa_ua'] = !empty($model->filePriceOdessaUa) ?
+                "{$model->filePriceOdessaUa->baseName}.{$model->filePriceOdessaUa->extension}" : $model->file_price_odessa_ua;
+            $post['ProductsCategories']['file_price_odessa_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_odessa_ua']);
+            $model->file_price_odessa_ua = $post['ProductsCategories']['file_price_odessa_ua'];
+            
+            $post['ProductsCategories']['file_price_kharkov_ua'] = !empty($model->filePriceKharkovUa) ?
+                "{$model->filePriceKharkovUa->baseName}.{$model->filePriceKharkovUa->extension}" : $model->file_price_kharkov_ua;
+            $post['ProductsCategories']['file_price_kharkov_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_kharkov_ua']);
+            $model->file_price_kharkov_ua = $post['ProductsCategories']['file_price_kharkov_ua'];
+            
+            $post['ProductsCategories']['file_price_chernihiv_ua'] = !empty($model->filePriceChernihivUa) ?
+                "{$model->filePriceChernihivUa->baseName}.{$model->filePriceChernihivUa->extension}" : $model->file_price_chernihiv_ua;
+            $post['ProductsCategories']['file_price_chernihiv_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_chernihiv_ua']);
+            $model->file_price_chernihiv_ua = $post['ProductsCategories']['file_price_chernihiv_ua'];
+            
+            $post['ProductsCategories']['file_price_khmelnytskyi_ua'] = !empty($model->filePriceKhmelnytskyiUa) ?
+                "{$model->filePriceKhmelnytskyiUa->baseName}.{$model->filePriceKhmelnytskyiUa->extension}" : $model->file_price_khmelnytskyi_ua;
+            $post['ProductsCategories']['file_price_khmelnytskyi_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_khmelnytskyi_ua']);
+            $model->file_price_khmelnytskyi_ua = $post['ProductsCategories']['file_price_khmelnytskyi_ua'];
+            
+            $post['ProductsCategories']['file_price_poltava_ua'] = !empty($model->filePricePoltavaUa) ?
+                "{$model->filePricePoltavaUa->baseName}.{$model->filePricePoltavaUa->extension}" : $model->file_price_poltava_ua;
+            $post['ProductsCategories']['file_price_poltava_ua'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_poltava_ua']);
+            $model->file_price_poltava_ua = $post['ProductsCategories']['file_price_poltava_ua'];
 
             $post['ProductsCategories']['file_price_en'] = !empty($model->filePriceEn) ?
                 "{$model->filePriceEn->baseName}.{$model->filePriceEn->extension}" : $model->file_price_en;
             $post['ProductsCategories']['file_price_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_en']);
             $model->file_price_en = $post['ProductsCategories']['file_price_en'];
+            
+            $post['ProductsCategories']['file_price_vinnitsa_en'] = !empty($model->filePriceVinnitsaEn) ?
+                "{$model->filePriceVinnitsaEn->baseName}.{$model->filePriceVinnitsaEn->extension}" : $model->file_price_vinnitsa_en;
+            $post['ProductsCategories']['file_price_vinnitsa_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_vinnitsa_en']);
+            $model->file_price_vinnitsa_en = $post['ProductsCategories']['file_price_vinnitsa_en'];
+            
+            $post['ProductsCategories']['file_price_dnepr_en'] = !empty($model->filePriceDneprEn) ?
+                "{$model->filePriceDneprEn->baseName}.{$model->filePriceDneprEn->extension}" : $model->file_price_dnepr_en;
+            $post['ProductsCategories']['file_price_dnepr_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_dnepr_en']);
+            $model->file_price_dnepr_en = $post['ProductsCategories']['file_price_dnepr_en'];
+            
+            $post['ProductsCategories']['file_price_lvov_en'] = !empty($model->filePriceLvovEn) ?
+                "{$model->filePriceLvovEn->baseName}.{$model->filePriceLvovEn->extension}" : $model->file_price_lvov_en;
+            $post['ProductsCategories']['file_price_lvov_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_lvov_en']);
+            $model->file_price_lvov_en = $post['ProductsCategories']['file_price_lvov_en'];
+            
+            $post['ProductsCategories']['file_price_odessa_en'] = !empty($model->filePriceOdessaEn) ?
+                "{$model->filePriceOdessaEn->baseName}.{$model->filePriceOdessaEn->extension}" : $model->file_price_odessa_en;
+            $post['ProductsCategories']['file_price_odessa_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_odessa_en']);
+            $model->file_price_odessa_en = $post['ProductsCategories']['file_price_odessa_en'];
+            
+            $post['ProductsCategories']['file_price_kharkov_en'] = !empty($model->filePriceKharkovEn) ?
+                "{$model->filePriceKharkovEn->baseName}.{$model->filePriceKharkovEn->extension}" : $model->file_price_kharkov_en;
+            $post['ProductsCategories']['file_price_kharkov_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_kharkov_en']);
+            $model->file_price_kharkov_en = $post['ProductsCategories']['file_price_kharkov_en'];
+            
+            $post['ProductsCategories']['file_price_chernihiv_en'] = !empty($model->filePriceChernihivEn) ?
+                "{$model->filePriceChernihivEn->baseName}.{$model->filePriceChernihivEn->extension}" : $model->file_price_chernihiv_en;
+            $post['ProductsCategories']['file_price_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_en']);
+            $model->file_price_en = $post['ProductsCategories']['file_price_en'];
+            
+            $post['ProductsCategories']['file_price_khmelnytskyi_en'] = !empty($model->filePriceKhmelnytskyiEn) ?
+                "{$model->filePriceKhmelnytskyiEn->baseName}.{$model->filePriceKhmelnytskyiEn->extension}" : $model->file_price_khmelnytskyi_en;
+            $post['ProductsCategories']['file_price_khmelnytskyi_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_khmelnytskyi_en']);
+            $model->file_price_khmelnytskyi_en = $post['ProductsCategories']['file_price_khmelnytskyi_en'];
+            
+            $post['ProductsCategories']['file_price_poltava_en'] = !empty($model->filePricePoltavaEn) ?
+                "{$model->filePricePoltavaEn->baseName}.{$model->filePricePoltavaEn->extension}" : $model->file_price_poltava_en;
+            $post['ProductsCategories']['file_price_poltava_en'] = str_replace(' ', '_', $post['ProductsCategories']['file_price_poltava_en']);
+            $model->file_price_poltava_en = $post['ProductsCategories']['file_price_poltava_en'];
 
             $post['ProductsCategories']['image_price_ru'] = !empty($model->imagePriceRu) ?
                 "{$model->imagePriceRu->baseName}.{$model->imagePriceRu->extension}" : $model->image_price_ru;
@@ -228,6 +372,31 @@ class ProductsCategoriesController extends AppController
                 $model->filePriceRu ? $model->uploadPrice('ru') : false;
                 $model->filePriceUa ? $model->uploadPrice('ua') : false;
                 $model->filePriceEn ? $model->uploadPrice('en') : false;
+                $model->filePriceVinnitsaRu ? $model->uploadPrice('vinnitsa_ru') : false;
+                $model->filePriceVinnitsaUa ? $model->uploadPrice('vinnitsa_ua') : false;
+                $model->filePriceVinnitsaEn ? $model->uploadPrice('vinnitsa_en') : false;
+                $model->filePriceDneprRu ? $model->uploadPrice('dnepr_ru') : false;
+                $model->filePriceDneprUa ? $model->uploadPrice('dnepr_ua') : false;
+                $model->filePriceDneprEn ? $model->uploadPrice('dnepr_en') : false;
+                $model->filePriceLvovRu ? $model->uploadPrice('lvov_ru') : false;
+                $model->filePriceLvovUa ? $model->uploadPrice('lvov_ua') : false;
+                $model->filePriceLvovEn ? $model->uploadPrice('lvov_en') : false;
+                $model->filePriceOdessaRu ? $model->uploadPrice('odessa_ru') : false;
+                $model->filePriceOdessaUa ? $model->uploadPrice('odessa_ua') : false;
+                $model->filePriceOdessaEn ? $model->uploadPrice('odessa_en') : false;
+                $model->filePriceKharkovRu ? $model->uploadPrice('kharkov_ru') : false;
+                $model->filePriceKharkovUa ? $model->uploadPrice('kharkov_ua') : false;
+                $model->filePriceKharkovEn ? $model->uploadPrice('kharkov_en') : false;
+                $model->filePriceChernihivRu ? $model->uploadPrice('chernihiv_ru') : false;
+                $model->filePriceChernihivUa ? $model->uploadPrice('chernihiv_ua') : false;
+                $model->filePriceChernihivEn ? $model->uploadPrice('chernihiv_en') : false;
+                $model->filePriceKhmelnytskyiRu ? $model->uploadPrice('khmelnytskyi_ru') : false;
+                $model->filePriceKhmelnytskyiUa ? $model->uploadPrice('khmelnytskyi_ua') : false;
+                $model->filePriceKhmelnytskyiEn ? $model->uploadPrice('khmelnytskyi_en') : false;
+                $model->filePricePoltavaRu ? $model->uploadPrice('poltava_ru') : false;
+                $model->filePricePoltavaUa ? $model->uploadPrice('poltava_ua') : false;
+                $model->filePricePoltavaEn ? $model->uploadPrice('poltava_en') : false;
+                
                 $model->imagePriceRu ? $model->uploadPriceImage('ru') : false;
                 $model->imagePriceUa ? $model->uploadPriceImage('ua') : false;
                 $model->imagePriceEn ? $model->uploadPriceImage('en') : false;
