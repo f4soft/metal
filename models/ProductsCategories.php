@@ -307,15 +307,16 @@ class ProductsCategories extends BaseModel
         
         $this->image_price = $this->{self::getTranslate('image_price')};
         $this->file_catalog = $this->{self::getTranslate('file_catalog')};
-        $this->image_catalog = $this->{self::getTranslate('image_catalog')};
+        $this->image_catalog = $this->{self::getTranslate('image_catalog')};        
         
-        $city = \Yii::$app->request->get('city') ? : '';  
-        $file_price = 'file_price';
-        if($city && $city != "kiev"){
-            $file_price = 'file_price_'.$city;
+        if(!Yii::$app instanceof Yii\console\Application){            
+            $city = \Yii::$app->request->get('city') ? : ''; 
+            $file_price = 'file_price';
+            if($city && $city != "kiev"){
+                $file_price = 'file_price_'.$city;
+            }
+            $this->file_price = $this->{self::getTranslate($file_price)};            
         }
-        
-        $this->file_price = $this->{self::getTranslate($file_price)};
         
         parent::afterFind();
     }

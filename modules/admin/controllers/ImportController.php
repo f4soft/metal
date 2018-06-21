@@ -337,8 +337,8 @@ class ImportController extends AppController
                             unset($model);
                             
                             if($need_next_iteration == false){
-                                Products::deleteAll(['updated_at' => NULL]);
-                                ProductsPricesToCities::deleteAll(['updated_at' => NULL]); 
+                                /*Products::deleteAll(['updated_at' => NULL]);
+                                ProductsPricesToCities::deleteAll(['updated_at' => NULL]);*/ 
                             }
                         }
                         

@@ -18,7 +18,15 @@ class AsyncController extends AppController
     
     public function actionIndex()
     {
-
+        $model = new \app\models\Products();
+        
+        $model->title_ru = "Алюм. круг 10 2024 T3";
+        $model->title_ua = "Алум. круг 10 2024 T3";
+        $model->category_id = 777;
+        
+        $model->validate();
+        
+        var_dump($model->alias); exit();
     }
     
     public function actionReport()

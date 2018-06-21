@@ -117,7 +117,7 @@ class BaseModel extends ActiveRecord
             default : $lg = "ru"; break;                
         }
        
-        return $this->hasMany(Products::className(), ['category_id' => 'id'])->orderBy(['products.title_'.$lg => SORT_ASC]);
+        return $this->hasMany(Products::className(), ['category_id' => 'id'])->onCondition(['not', ['updated_at' => null]])->orderBy(['products.title_'.$lg => SORT_ASC]);
     }
     
     public function getProductsale()

@@ -30,6 +30,8 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'ru-RU',
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.

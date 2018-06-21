@@ -28,7 +28,7 @@ class AutoimportController extends Controller
         Yii::$app->i18n->translations['app*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'basePath' => '@app/messages',
-            'sourceLanguage' => 'en-US',
+            'sourceLanguage' => 'ru-RU',
             'fileMap' => [
                 'app' => 'app.php',
                 'app/admin' => 'admin.php',
@@ -39,7 +39,15 @@ class AutoimportController extends Controller
     
     public function actionIndex()
     {
-
+        $model = new Products();
+        
+        $model->title_ru = "Алюм. круг 10 2024 T3";
+        $model->title_ua = "Алум. круг 10 2024 T3";
+        
+        $model->validate();
+        
+        var_dump($model->alias);
+                
     }
     
     public function actionCategories()
@@ -69,11 +77,10 @@ class AutoimportController extends Controller
                     
                     $content = reset($content);
 
-                    foreach ($content as $category) { 
+                    foreach ($content as $category) {
                         $current = ProductsCategories::find()->where(['external_id' => $category['external_id']])->one();
                         $model = $current ? $current : new ProductsCategories();
                         $model->attributes = $category;
-
                         $root = !empty($category['parent_id']) ? ProductsCategories::find()->where("external_id =:external_id", [':external_id' => $category['parent_id']])->one() : ProductsCategories::find()->where("alias =:alias", [':alias' => 'menu'])->one();
                         if (!$current) {
                             $model->status = 1;
@@ -144,7 +151,7 @@ class AutoimportController extends Controller
     
     public function actionProducts()
     {
-        set_time_limit(3600); /* 1 hour */
+        set_time_limit(0); /* 1 hour */
         
         $dataAuto = modelAutoImport::find()
                 ->where(['status' => 2])
@@ -329,14 +336,15 @@ class AutoimportController extends Controller
                             }
 
                             if($key_all){
-                                var_dump('previos delete');
+                                /*var_dump('previos delete');
                                 Products::deleteAll(['updated_at' => NULL]);
-                                ProductsPricesToCities::deleteAll(['updated_at' => NULL]); 
+                                ProductsPricesToCities::deleteAll(['updated_at' => NULL]);*/ 
                             }
 
                             $dataAuto->status = 4;
                             $dataAuto->save();
 
+                            @unlink($file);
                             var_dump('Product import has been success !');   
 
                         } catch (PDOException $e) {

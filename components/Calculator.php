@@ -162,8 +162,15 @@ class Calculator
         $coef = $productAddInfo[0]->coefficient;
         $price = $productAddInfo[0]->price;
         /*двумерный или одномерный*/
-        ($width != 0) ? $unitsBase = Yii::$app->params["units2_{$item->unit_key}"]:
-        $unitsBase = Yii::$app->params["units_{$item->unit_key}"];
+        
+        if($width != 0 && isset(Yii::$app->params["units2_{$item->unit_key}"])){
+            $unitsBase = Yii::$app->params["units2_{$item->unit_key}"]; 
+        } else if(isset(Yii::$app->params["units_{$item->unit_key}"])) {
+            $unitsBase = Yii::$app->params["units_{$item->unit_key}"];
+        } else {
+            return [];
+        }
+        
         array_walk($unitsBase, function (&$item, $key){
             $item = Yii::t('app/units', $item);
         });
